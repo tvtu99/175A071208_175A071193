@@ -1,0 +1,138 @@
+
+.bg-light{
+    background-color:#56a4fe !important;
+}
+.copyandmxh{
+    display: flex;
+    height: auto;
+    background-color:#134b8a;
+}
+/*footer*/
+.bd{
+    color: #fff;display: block;border: 1px solid #fff;
+    padding: 20px;
+}
+.dc{
+    padding-top: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 15px;
+}
+.page-footer{
+    display: flex;
+    height: auto;
+    background-color:#56a4fe;
+}
+.nav-footer  ul li{
+    list-style: none;
+    text-align: center;
+}
+.mxh ul li{
+    list-style: none;
+    display: inline;
+    text-align: center;
+}
+.nav-footer ul li a{
+    color: #000;
+}
+.nav-footer,.copy,.mxh{
+    padding-top: 20px;
+}
+.mxh a{
+    display: inline-block;
+	width: 40px;
+	height: 40px;
+	background: #000;
+	color: #fff;
+	text-align: center;
+	border-radius: 50%;
+	line-height: 40px;
+}
+.copy{
+    display: inline-block;
+    text-align: left;
+}
+.copy p{
+    font-size: 20px;
+    color: #FFFFFF;
+}
+.mxh{
+padding-top: 20px !important;
+}
+
+
+/*header*/
+.header{
+    height: auto;
+    background-color:rgb(233, 225, 206);
+}
+
+.header nav a img{
+    width: 80px;
+}
+.btn-outline-success {
+    color: rgb(53, 79, 196);
+    background-color: transparent;
+    background-image: none;
+    border-color: #000;
+}
+.btn-outline-success:hover {
+    color: #000;
+    background-color: transparent;
+    background-image: none;
+    border-color: #000;
+}
+/* chinh font-size chu*/
+.font-size-a a {
+    font-size: 12px;
+}
+.font-size-a ul h4{
+    font-size: 16px;
+}
+
+
+/*main-l*/
+ul.menu li a {
+    border-bottom: 2px solid #E7E8E6;
+    color: #626A69;
+    display: block;
+    outline: none;
+    padding: 6px 4px;
+}
+ul.menu li{
+    list-style: none;
+}
+.dm{
+    width: 100%;
+    border: solid 5px #56a4fe;
+}
+.daumuc a h3{
+    padding-top: 2px;
+    display: block;
+    height: 33px;
+    background:#56a4fe;
+    border-bottom: 1px solid #E7E8E6;
+    color: #FFFFFF;
+    font-size: 120%;
+}
+
+ul li a.active {
+	color: #2C79B3;
+	font-weight: bold;
+}
+ul.menu li a:hover{
+    color: #000;
+}
+.box-check {
+    border-top: solid 22px #56a4fe;
+    border-left: solid 5px #56a4fe;
+    border-right: solid 5px #56a4fe;
+    border-bottom: solid 5px #56a4fe;
+    font-size: 12px;
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding-left: 5px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
