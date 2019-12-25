@@ -170,4 +170,27 @@ ul.menu li a:hover{
 padding-top: 20px !important;
 }
 
+.label,.value{
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+.frm{
+    display: block;
+    border: #56a4fe 1px solid;
+    padding: 20px 50px;
+}
+.btn-n{
+    clear: both;
+    padding-top: 20px;
+    margin-left: 0px;
+}
 
+table.list, table.list td{
+	border:1px solid #cccccc;
+	border-collapse:collapse;
+	padding:5px;
+}
+.list{
+    margin: 20px;
+}
