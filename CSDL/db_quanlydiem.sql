@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 24, 2019 lúc 06:01 PM
+-- Thời gian đã tạo: Th12 25, 2019 lúc 04:35 PM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.3
 
@@ -241,20 +241,25 @@ INSERT INTO `sv` (`MaSV`, `MaL`, `HoTen`, `NamSinh`, `CMT`, `Que`) VALUES
 --
 
 CREATE TABLE `taikhoan` (
-  `username` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `username` varchar(55) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `password` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `level` int(1) NOT NULL
+  `level` int(1) NOT NULL,
+  `email` varchar(254) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `verified` varchar(254) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
+  `verification_code` varchar(254) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`username`, `password`, `level`) VALUES
-('admin', '1', 1),
-('giaovien', '1', 3),
-('quanli', '1', 2),
-('sinhvien', '1', 4);
+INSERT INTO `taikhoan` (`username`, `password`, `level`, `email`, `verified`, `verification_code`) VALUES
+('admin', '1', 1, NULL, NULL, NULL),
+('anhtuyet', 'abc', 0, 'tvtu165@gmail.com', '1', 'bb735a83a0b95f549334768de7486508'),
+('giaovien', '1', 3, NULL, NULL, NULL),
+('quanli', '1', 2, NULL, NULL, NULL),
+('sinhvien', '1', 4, NULL, NULL, NULL),
+('test2', '$2y$10$6P8gBGbFY0Dz/WzEFJzAl.wKI88GZiMmLfe0/bGpnNRl.22OKc9yq', 0, 'trinhtu16051999@gmail.com', '0', '44bb4dc1fe1d268c99252758a9c725c8');
 
 --
 -- Chỉ mục cho các bảng đã đổ

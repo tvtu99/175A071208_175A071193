@@ -1,7 +1,9 @@
 <?php
+//sử dụng PDO
 $user = $_POST['user'];
 $pass = $_POST['pass'];
 $email = $_POST['email'];
+$passh= password_hash($pass,PASSWORD_DEFAULT);
 if($_POST){
     $email = isset($_POST['email']) ? $_POST['email'] : "";
     // posted email must not be empty
@@ -43,21 +45,21 @@ if($_POST){
                 if($num>0){
     
                     // bạn phải tạo một kịch bản xác minh gửi lại
-                    echo "<div>Your email is already in the system but not yet verified. <a href='resend.php'>Resend verification?</a>.</div>";
+                    echo "<div>Email của bạn đã có trong hệ thống nhưng chưa được xác minh. <a href='taotaikhoan.html'>Quay Lại.</a></div>";
                 }
                 //bay gio se xac minh
                 else
                 {
                     $verificationCode = md5(uniqid("TRINHTU165", true));// Tạo mã xác minh
                     // send the email verification
-                    $verificationLink = "http://localhost:9999/project/php/activate.php?code=" . $verificationCode;// noi dung mail
+                    $verificationLink = "http://localhost:9999/project/login_logout_sub.php/activate.php?code=" . $verificationCode;// noi dung mail
                     $to = "$email";
                     $subject = "Send Email from Localhost";
                     $txt = "Vui Lòng Click vào link để xác nhận :" .$verificationLink;
                     $headers = "From: meocon160599@gmail.com";
                     $test = mail($to,$subject,$txt,$headers);
                     if($test){
-                        echo "<div>A verification email were sent to <b>" . $email . "</b>, please open your email inbox and click the given link so you can login.</div>";
+                        echo "<div>MỘt mã đã Gửi về email :<b>" . $email . "</b>,. Bạn hãy mở hộp thư lên và click vào link để kích hoạt tài khoản.</div>";
                         $query = "INSERT INTO 
                                     taikhoan 
                                 SET 
@@ -72,14 +74,14 @@ if($_POST){
                         $stmt->bindParam(1, $email);
                         $stmt->bindParam(2, $verificationCode);
                         $stmt->bindParam(3, $user);
-                        $stmt->bindParam(4, $pass);
+                        $stmt->bindParam(4, $passh);
     
                         // Execute the query
                         if($stmt->execute()){
-                            echo "<div>Unverified email was saved to the database.</div>";
+                            //echo "<div>Unverified email was saved to the database.</div>";
                         }else{
-                            echo "<div>Unable to save your email to the database. <a href='taotaikhoan.php'>Quay Lại.</a></div>";
-                            print_r($stmt->errorInfo());
+                            echo "<div>Email đã tồn tại. <a href='taotaikhoan.html'>Quay Lại.</a></div>";
+                            //print_r($stmt->errorInfo());
                         }
                         
                     }

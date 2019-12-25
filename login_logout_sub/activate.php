@@ -26,15 +26,15 @@ if($num>0){
  
     if($stmt->execute()){           
         // tell the user
-        echo "<div>Your email is valid, thanks!. You may now login.</div>";
+        echo "<div>Kích Hoạt Thành Công,. Bây giờ bạn có thể đăng nhập. <a href="dangnhap.html">Đăng Nhập</a></div>";
     }else{
         echo "<div>Khong the cap nhap ma xac minh</div>";
-        print_r($stmt->errorInfo());
+        //print_r($stmt->errorInfo());
     }       
  
 }else{
     // tell the user he should not be in this page
-    echo "<div>That bai</div>";
+    echo "<div>Tài Khoản k tồn tại. Mời bạn đăng ký lại <a href="taotaikhoan.html">Đăng ký</a></div>";
 }
 }
 ?>
