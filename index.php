@@ -54,7 +54,7 @@
                     <h5 style="padding: 5px;">Danh Mục Chính</h5>
                     <ul class="menu">
                       <li><a href="index.php" class="active"><span>Home</span></a></li>
-                      <li><a href="tracuudiem.html"><span>Tra Cứu Điểm</span></a></li>
+                      <li><a href="tracuudiem.php"><span>Tra Cứu Điểm</span></a></li>
                       <li><a href=""><span>Tin Tức</span></a></li>
                       <li><a href=""><span>Chương Trình Đào Tạo</span></a></li>
                     </ul>	   

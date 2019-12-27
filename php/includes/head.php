@@ -17,7 +17,7 @@
   <!-- header -->
     <div class="header row">
         <div class="cm col-md-10">
-            <div class="logo"><a href="../../index.html"><img src="../../img/logo.png" alt="" style="width : 80px;"></a></div>
-            <a href="../../index.html"><H2>Đại Học Thủy Lợi</H2></a></div>
-        <div class="dndx col-md-2"><a href="../../login_logout_sub/dangnhap.html">Thoát</a></div>
+            <div class="logo"><a href="../../index.php"><img src="../../img/logo.png" alt="" style="width : 80px;"></a></div>
+            <a href="../../index.php"><H2>Đại Học Thủy Lợi</H2></a></div>
+        <div class="dndx col-md-2"><a href="../../login_logout_sub/dangnhap.php">Thoát</a></div>
     </div>

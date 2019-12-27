@@ -45,7 +45,7 @@ if($_POST){
                 if($num>0){
     
                     // bạn phải tạo một kịch bản xác minh gửi lại
-                    echo "<div>Email của bạn đã có trong hệ thống nhưng chưa được xác minh. <a href='taotaikhoan.html'>Quay Lại.</a></div>";
+                    echo "<div>Email của bạn đã có trong hệ thống nhưng chưa được xác minh. <a href='taotaikhoan.php'>Quay Lại.</a></div>";
                 }
                 //bay gio se xac minh
                 else
@@ -80,7 +80,7 @@ if($_POST){
                         if($stmt->execute()){
                             //echo "<div>Unverified email was saved to the database.</div>";
                         }else{
-                            echo "<div>Email đã tồn tại. <a href='taotaikhoan.html'>Quay Lại.</a></div>";
+                            echo "<div>Email đã tồn tại. <a href='taotaikhoan.php'>Quay Lại.</a></div>";
                             //print_r($stmt->errorInfo());
                         }
                         

@@ -14,7 +14,7 @@
         <div class="cm col-md-10">
             <div class="logo"><a href="../index.php"><img src="../img/logo.png" alt="" style="width : 80px;"></a></div>
             <a href="../index.php"><H2>Đại Học Thủy Lợi</H2></a></div>
-        <div class="dndx col-md-2"><a href="dangnhap.html">Đăng Nhập</a></div>
+        <div class="dndx col-md-2"><a href="dangnhap.php">Đăng Nhập</a></div>
     </div>
     <div class="form-ac">
         <form action="sub.php" method="POST">

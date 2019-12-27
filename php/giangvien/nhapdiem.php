@@ -10,8 +10,8 @@
                 <div class="dm">
                   <h5 style="padding: 5px;">Danh Mục Chính</h5>
                   <ul class="menu">
-                    <li><a href="giangvien.html"><span>Nhập Danh Sách Lớp</span></a></li>
-                    <li><a href=""  class="active"><span>Nhập Điểm</span></a></li>
+                    <li><a href="giangvien.php"><span>Nhập Danh Sách Lớp</span></a></li>
+                    <li><a href="nhapdiem.php"  class="active"><span>Nhập Điểm</span></a></li>
                   </ul>	   
                 </div>
                 
