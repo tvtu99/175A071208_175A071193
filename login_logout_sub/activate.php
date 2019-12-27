@@ -23,20 +23,21 @@ else
     
         $stmt = $con->prepare($query);
         $stmt->bindParam(':verification_code', $code);
-    
-        if($stmt->execute()){           
-            // tell the user
-            echo "<div>Kích Hoạt Thành Công. Bây giờ bạn có thể đăng nhập. <a href="dangnhap.html">Đăng Nhập</a></div>" ;
+
+        
+        if($stmt->execute())
+        {
+            echo "<div>Kích Hoạt Thành Công. Bây giờ bạn có thể đăng nhập. <a href='dangnhap.php'>Đăng Nhập</a></div>" ;
         }
-        else{
+        else
+        {
             echo "<div>Khong the cap nhap ma xac minh</div>";
             //print_r($stmt->errorInfo());
         }       
     
     }
     else{
-        // tell the user he should not be in this page
-        echo "<div>Tài Khoản k tồn tại. Mời bạn đăng ký lại <a href="taotaikhoan.html">Đăng ký</a></div>";
+        echo "<div>Tài Khoản k tồn tại. Mời bạn đăng ký lại <a href='taotaikhoan.php'>Đăng ký Lại</a></div>";       // tell the user he should not be in this page
     }
 }
 ?>

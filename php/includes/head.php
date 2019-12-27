@@ -9,6 +9,7 @@
     <link rel="stylesheet" type ="text/css" href="../../css/style.css">
     <link rel="stylesheet" type ="text/css" href="../../login_logout_sub/style-php.css">
     <link rel="stylesheet" type ="text/css" href="./style-ql.css">
+    <link rel="stylesheet" type ="text/css" href="../quantriweb/style-ql.css">
     <script src="../../js/jquery-3.4.1.js"></script>
 	<script src="../../js/bootstrap.js"></script>
 	<script src="../../js/script.js"></script>
