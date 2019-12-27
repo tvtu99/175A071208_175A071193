@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     
-    <title>Tra Cứu Điểm</title>
+    <title>Đại Học Thủy Lợi</title>
     <link rel="stylesheet" type ="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type ="text/css" href="./css/style.css">
 </head>
@@ -36,7 +36,7 @@
                   <a class="nav-link" href="#">Liên Hệ</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="./login_logout_sub/dangnhap.html">Đăng Nhập</a>
+                  <a class="nav-link" href="./login_logout_sub/dangnhap.php">Đăng Nhập</a>
               </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
@@ -53,13 +53,13 @@
                   <div class="dm">
                     <h5 style="padding: 5px;">Danh Mục Chính</h5>
                     <ul class="menu">
-                      <li><a href="index.html"><span>Home</span></a></li>
-                      <li><a href="tracuudiem.html"  class="active"><span>Tra Cứu Điểm</span></a></li>
+                      <li><a href="index.php" class="active"><span>Home</span></a></li>
+                      <li><a href="tracuudiem.html"><span>Tra Cứu Điểm</span></a></li>
                       <li><a href=""><span>Tin Tức</span></a></li>
                       <li><a href=""><span>Chương Trình Đào Tạo</span></a></li>
                     </ul>	   
                   </div>
-                  <!--  -->
+                  <!-- box check -->
                   <div class="box-check">
                     <h5>Điều tra việc làm</h5>
                     <div style="PADDING-LEFT:10px;text-align:left;">			
@@ -80,100 +80,28 @@
                   
               </div>
               <div class="main-r col-md-9">
-                <div class="frm-tk">
-                    <div class="daumuc">
-                        <a href="">
-                            <h3 style="text-align: center;">Tra Cứu Điểm</h3>
-                        </a>
-                    </div>
-                    <form class="frm" action="" method="GET">
-                        <div class="row">
-                          <div class="col-md-4">
-                            <div class="label">Mã Sinh Viên</div>
-                            <div class="value"><input type="text" name="masv" size="20" required></div>
-                          </div>					
-                          <div class="col-md-4">
-                            <div class="label">Năm Học</div>
-                            <div class="value"><input type="text" name="namhoc" size="20" required></div>
-                          </div>
-                          <div class="col-md-4">
-                            <div class="label">Kì Học</div>
-                            <div class="value">
-                                <select name="kihoc" id="">
-                                    <option>1</option>
-                                    <option>2</option>						
-                                </select>
-                            </div>
-                            <div class="label">Giai Đoạn</div>
-                            <div class="value">
-                                <select name="giaidoan" id="">
-                                    <option>1</option>
-                                    <option>2</option>	
-                                    <option>3</option>
-                                    <option>4</option>					
-                                </select>
-                            </div>
-                            </div>
-                        </div>					
-                        <div class="btn-n">
-                            <button type="submit" class="btn btn-primary">Tra Cứu</button>
-                        </div>
-                    </form>
-                    <form class="frm" action="" method="GET">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <div class="label">Chứng Minh Thư</div>
-                          <div class="value"><input type="text" name="cmt" size="20" required></div>
-                        </div>					
-                        <div class="col-md-4">
-                          <div class="label">Năm Học</div>
-                          <div class="value"><input type="text" name="namhoc" size="20" required></div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="label">Kì Học</div>
-                          <div class="value">
-                              <select name="kihoc" id="">
-                                  <option>1</option>
-                                  <option>2</option>						
-                              </select>
-                          </div>
-                          <div class="label">Giai Đoạn</div>
-                          <div class="value">
-                              <select name="giaidoan" id="">
-                                  <option>1</option>
-                                  <option>2</option>	
-                                  <option>3</option>
-                                  <option>4</option>					
-                              </select>
-                          </div>
-                          </div>
-                      </div>					
-                      <div class="btn-n">
-                          <button type="submit" class="btn btn-primary">Tra Cứu</button>
-                      </div>
-                  </form>
+                <div class="daumuc">
+                  <a href="">
+                    <h3>Tin Tức</h3>
+                  </a>
                 </div>
-                <div class="list">
-                  <table class="list" bgcolor="#FFFFFF">
-                    <tr class="row-first">
-                      <td width="150">Mã Sinh Viên</td>
-                      <td width="100">Giai Đoạn</td>
-                      <td width="150">Mã Môn Học</td>
-                      <td width="150">Quá Trình</td>													
-                      <td width="150">Điểm Thi</td>
-                      <td width="70">Điểm</td>
-                    </tr>
-                    <tr>
-                      <td>175A0</td>
-                                    <td>GD12019</td>
-                                    <td>CNW</td>
-                                    <td>7.0</td>
-                                    <td>7.0</td>
-                                    <td>7.0</td>
-                                </tr>
-                  </table>
+                <ul>
+                    <li><a href="">Thông báo thi chuẩn Tiếng Anh đâu ra cho trình độ đại học hệ chính quy đợt 4 năm 2019 (27/11/2019)</a>
+                    </li>
+                    <li><a href="">Kết quả thi chuẩn Tiếng Anh đầu đợt 3 năm 2019 (11/10/2019)</a></li>
+                    <li><a href="">Thông báo thi chuẩn Tiếng Anh đâu ra cho trình độ đại học hệ chính quy đợt 3 năm 2019 tại Hà Nội (30/08/2019)
+                    </a></li>
+                    <li><a href="">Danh sách các môn điều chỉnh lịch thi GD2, HK2, 2018_2019 (13/06/2019)
+                    </a></li>
+                    <li><a href="">Triển khai kế hoạch học kỳ hè năm học 2018-2019 (12/06/2019)
+                    </a></li>
+                    <li><a href="">Thông báo thi chuẩn Tiếng Anh đâu ra cho trình độ đại học hệ chính quy đợt 2 năm 2019 tại Hà Nội (02/04/2019)
+                    </a></li>
+                    <li><a href="">Thông báo kết quả thi chuẩn Tiếng Anh đầu ra đợt 1 năm 2019 (22/02/2019)
+                    </a></li>
+                </ul>
                   
-                </div>
+              </div>
           </div>
       </main>
       <!-- footer -->
@@ -228,9 +156,8 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="./js/jquery-3.4.1.min.js"></script>
-    <script src="./js/bootstrap.js"></script>
-
-    <script src="./js/javascript.js"></script>
+    <script src="../js/jquery-3.4.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

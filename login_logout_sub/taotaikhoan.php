@@ -12,8 +12,8 @@
 <body>
     <div class="header row">
         <div class="cm col-md-10">
-            <div class="logo"><a href="../index.html"><img src="../img/logo.png" alt="" style="width : 80px;"></a></div>
-            <a href="../index.html"><H2>Đại Học Thủy Lợi</H2></a></div>
+            <div class="logo"><a href="../index.php"><img src="../img/logo.png" alt="" style="width : 80px;"></a></div>
+            <a href="../index.php"><H2>Đại Học Thủy Lợi</H2></a></div>
         <div class="dndx col-md-2"><a href="dangnhap.html">Đăng Nhập</a></div>
     </div>
     <div class="form-ac">
@@ -48,8 +48,8 @@
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../js/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery-3.4.1.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <script src="../js/javascript.js"></script>
+    <script src="../js/script.js"></script>
 </body>
 </html>

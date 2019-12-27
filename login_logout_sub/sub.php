@@ -8,7 +8,7 @@ if($_POST){
     $email = isset($_POST['email']) ? $_POST['email'] : "";
     // posted email must not be empty
     if(empty($email)){
-        echo "<div>Email cannot be empty.</div>";
+        echo "<div>Email không thể để trống</div>";
     }
     // must be a valid email address
     else if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
