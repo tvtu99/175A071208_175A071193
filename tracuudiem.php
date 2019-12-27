@@ -153,8 +153,8 @@
                       </div>
                   </form>
                 </div>
-                <div class="list">
-                  <table class="list" bgcolor="#FFFFFF">
+                <div class="bangdulieu">
+                  <table class="table-data" bgcolor="#FFFFFF">
                     <tr class="row-first">
                       <td width="150">Mã Sinh Viên</td>
                       <td width="100">Giai Đoạn</td>
@@ -165,12 +165,12 @@
                     </tr>
                     <tr>
                       <td>175A0</td>
-                                    <td>GD12019</td>
-                                    <td>CNW</td>
-                                    <td>7.0</td>
-                                    <td>7.0</td>
-                                    <td>7.0</td>
-                                </tr>
+                          <td>GD12019</td>
+                          <td>CNW</td>
+                          <td>7.0</td>
+                          <td>7.0</td>
+                          <td>7.0</td>
+                      </tr>
                   </table>
                   
                 </div>
