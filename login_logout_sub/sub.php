@@ -3,7 +3,7 @@
 $user = $_POST['user'];
 $pass = $_POST['pass'];
 $email = $_POST['email'];
-$passh= password_hash($pass,PASSWORD_DEFAULT);
+$passh= password_hash($pass,PASSWORD_DEFAULT);//băm mật khẩu
 if($_POST){
     $email = isset($_POST['email']) ? $_POST['email'] : "";
     // posted email must not be empty
@@ -24,7 +24,7 @@ if($_POST){
         else
             {
                 //Kiem tra ban ghi ton tai
-            $query = "SELECT username FROM taikhoan WHERE email = ? and verified = '1'"; //? thay the gia tri
+            $query = "SELECT username FROM taikhoan WHERE email = ? and verified = '1'"; //? thay the gia tri bằng bindParam
             $stmt = $con->prepare( $query );
             $stmt->bindParam(1, $email); //chen gia tri vao ? thu 1
             $stmt->execute(); //run
@@ -41,7 +41,7 @@ if($_POST){
                 $stmt->bindParam(1, $email);
                 $stmt->execute();
                 $num = $stmt->rowCount();
-    
+
                 if($num>0){
     
                     // bạn phải tạo một kịch bản xác minh gửi lại
@@ -74,7 +74,7 @@ if($_POST){
                         $stmt->bindParam(1, $email);
                         $stmt->bindParam(2, $verificationCode);
                         $stmt->bindParam(3, $user);
-                        $stmt->bindParam(4, $passh);
+                        $stmt->bindParam(4, $passh); //insert password = password_hasd()
     
                         // Execute the query
                         if($stmt->execute()){

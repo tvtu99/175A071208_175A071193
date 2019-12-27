@@ -44,6 +44,12 @@
     font-size: 16px;
 }
 /*main-l*/
+.dm{
+    margin-top: 40px;
+    width: 100%;
+    border: solid 5px #56a4fe;
+    border-top: 22px solid #56a4fe;
+}
 ul.menu li a {
     border-bottom: 2px solid #E7E8E6;
     color: #626A69;
@@ -61,10 +67,6 @@ ul.menu li a span:hover{
 }
 ul.menu li{
     list-style: none;
-}
-.dm{
-    width: 100%;
-    border: solid 5px #56a4fe;
 }
 
 
@@ -88,11 +90,12 @@ ul.menu li a:hover{
     padding-top: 15px;
     padding-bottom: 15px;
 }
-/*main-l*/
+/*main-r*/
 .daumuc{
     padding-top: 40px;
 }
-.daumuc a h3{
+
+.daumuc a h3,.daumuc h3{
     padding-top: 5px;
     display: block;
     height: 33px;
@@ -163,8 +166,9 @@ ul.menu li a:hover{
     margin: auto;
 }
 .copy p{
-    font-size: 20px;
+    font-size: 16px;
     color: #FFFFFF;
+    padding-top: 12px;
 }
 .mxh{
 padding-top: 20px !important;
@@ -175,17 +179,25 @@ padding-top: 20px !important;
     float: left;
     margin-left: 10px;
 }
+/* form */
 .frm{
     display: block;
-    border: #56a4fe 1px solid;
+    border: #56a4fe 3px solid;
     padding: 20px 50px;
+}
+.bangdulieu{
+    display: block;
+    width: auto;
+    border: #56a4fe 1px solid;
+    margin: 20px 0px;
+    padding-top: 20px;
 }
 .btn-n{
     clear: both;
-    padding-top: 20px;
+    padding-top: 0px;
     margin-left: 0px;
 }
-
+/* bảng dữ liệu */
 table.list, table.list td{
 	border:1px solid #cccccc;
 	border-collapse:collapse;
@@ -193,4 +205,11 @@ table.list, table.list td{
 }
 .list{
     margin: 20px;
+}
+/* bảng dữ liệu giangvien.html */
+.table-data,.table-data td{
+    border:1px solid #cccccc;
+	border-collapse:collapse;
+	padding:5px;
+    margin: 15px;
 }

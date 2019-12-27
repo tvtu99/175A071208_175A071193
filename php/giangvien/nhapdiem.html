@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đại Học Thủy Lợi</title>
+    <link rel="stylesheet" type ="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type ="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type ="text/css" href="../../login_logout_sub/style-php.css">
+</head>
+<body>
+  <!-- header -->
+    <div class="header row">
+        <div class="cm col-md-10">
+            <div class="logo"><a href="../../index.html"><img src="../../img/logo.png" alt="" style="width : 80px;"></a></div>
+            <a href="../../index.html"><H2>Đại Học Thủy Lợi</H2></a></div>
+        <div class="dndx col-md-2"><a href="../../login_logout_sub/dangnhap.html">Thoát</a></div>
+    </div>
+    <!-- main -->
+    <main>
+      
+        <div class="row" style="margin-top: 30px;">
+            <!-- main-left -->
+            <div class="main-l col-md-3">
+                <div class="dm">
+                  <h5 style="padding: 5px;">Danh Mục Chính</h5>
+                  <ul class="menu">
+                    <li><a href="giangvien.html"><span>Nhập Danh Sách Lớp</span></a></li>
+                    <li><a href=""  class="active"><span>Nhập Điểm</span></a></li>
+                  </ul>	   
+                </div>
+                
+            </div>
+            <!-- main-right -->
+            <div class="main-r col-md-9">
+              <div class="daumuc">
+                <a href="">
+                  <h3 style="text-align: center;">Nhập Điểm Danh Sách Lớp</h3>
+                </a>
+              </div>
+              
+              <div class="frm">
+                <div class="row">
+                    <div class="col-md-4">
+                      <div class="label">Lớp Học Phần</div>
+                        <div class="value">
+                          <select name="kihoc" id="">
+                            <option>LHP1</option>
+                            <option>LHP2</option>
+                            <option>LHP12</option>							
+                          </select>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2">
+                      <div class="btn-n">
+                        <button class="btn btn-primary">Hiển Thị</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="daumuc">
+                    <a href="">
+                        <h3 style="text-align: center;">Nhập</h3>
+                    </a>
+                </div>
+                <form class = "frm" action="">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <div class="label">Mã SV</div>
+                            <div class="value"><input type="text" name="masv" size="10" required></div>
+                            <div class="label">Điểm Quá Trình</div>
+                            <div class="value"><input type="text" name="dqt" size="10" required></div>
+                            <div class="label">Điểm Thi</div>
+                            <div class="value"><input type="text" name="dt" size="10" required></div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="btn-n">
+                                <button type="submit" class="btn btn-primary">Thêm</button>
+                              </div>
+                        </div>
+                    </div>
+                </form>  
+                <!-- demo -->
+                <!-- Biến maLHP từ form truyền -->
+                <div class="daumuc"> <!--  -->
+                    <a href="">
+                      <h3 style="text-align: center;">Danh Sách Điểm</h3>
+                    </a>
+                  </div>
+              <div class="list">
+                <table class="list" bgcolor="#FFFFFF">
+                  <tr class="row-first">
+                    <td width="150">Mã Sinh Viên</td>
+                    <td width="150">Điểm Quá Trình</td>
+                    <td width="150">Điểm Thi</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>175A0</td>
+                    <td>7.0</td>
+                    <td>8.0</td>
+                    <td width="50"><a href="">Xóa</a></td>
+                    <td width="50"><a href="">Sửa</a></td>
+                 </tr>
+                 <tr>
+                    <td>175A0</td>
+                    <td>7.0</td>
+                    <td>8.0</td>
+                    <td width="50"><a href="">Xóa</a></td>
+                    <td width="50"><a href="">Sửa</a></td>
+                 </tr>
+                 <tr>
+                    <td>175A0</td>
+                    <td>7.0</td>
+                    <td>8.0</td>
+                    <td width="50"><a href="">Xóa</a></td>
+                    <td width="50"><a href="">Sửa</a></td>
+                 </tr>
+                 <tr>
+                    <td>175A0</td>
+                    <td>7.0</td>
+                    <td>8.0</td>
+                    <td width="50"><a href="">Xóa</a></td>
+                    <td width="50"><a href="">Sửa</a></td>
+                 </tr>
+                 <tr>
+                    <td>175A0</td>
+                    <td>7.0</td>
+                    <td>8.0</td>
+                    <td width="50"><a href="">Xóa</a></td>
+                    <td width="50"><a href="">Sửa</a></td>
+                 </tr>
+                </table>
+              </div>
+          </div> 
+            
+        </div>
+    </main>
+    <!-- footer -->
+    <div class="row copyandmxh">
+        <div class="col-md-9 copy">
+          <p>@2017. Bản quyền thuộc về trường Đại học Thủy Lợi</p>
+        </div>
+      <div class="mxh col-md-3">
+        <ul>
+            <li><a href="#" class="fb">FB</a></li>
+            <li><a href="#" class="tw">TW</a></li>
+            <li><a href="#" class="gp">GB</a></li>
+        </ul>
+      </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../../js/jquery-3.4.1.min.js"></script>
+    <script src="../../js/bootstrap.js"></script>
+    <script src="../../js/javascript.js"></script>
+</body>
+</html>
