@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 25, 2019 lúc 04:35 PM
+-- Thời gian đã tạo: Th12 28, 2019 lúc 03:50 AM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.3
 
@@ -183,15 +183,16 @@ INSERT INTO `monh` (`MaMH`, `TenMH`, `MaN`, `STC`, `HS`) VALUES
 
 CREATE TABLE `nganh` (
   `MaN` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `TenN` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL
+  `TenN` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `MaKhoa` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `nganh`
 --
 
-INSERT INTO `nganh` (`MaN`, `TenN`) VALUES
-('CNTT', 'Công nghệ Thông tin');
+INSERT INTO `nganh` (`MaN`, `TenN`, `MaKhoa`) VALUES
+('CNTT', 'Công nghệ Thông tin', 'CNTT');
 
 -- --------------------------------------------------------
 
@@ -311,7 +312,8 @@ ALTER TABLE `monh`
 -- Chỉ mục cho bảng `nganh`
 --
 ALTER TABLE `nganh`
-  ADD PRIMARY KEY (`MaN`);
+  ADD PRIMARY KEY (`MaN`),
+  ADD KEY `MaKhoa` (`MaKhoa`);
 
 --
 -- Chỉ mục cho bảng `sv`
@@ -350,6 +352,12 @@ ALTER TABLE `lophp`
 --
 ALTER TABLE `monh`
   ADD CONSTRAINT `monh_ibfk_1` FOREIGN KEY (`MaN`) REFERENCES `nganh` (`MaN`);
+
+--
+-- Các ràng buộc cho bảng `nganh`
+--
+ALTER TABLE `nganh`
+  ADD CONSTRAINT `nganh_ibfk_1` FOREIGN KEY (`MaKhoa`) REFERENCES `khoa` (`MaKhoa`);
 
 --
 -- Các ràng buộc cho bảng `sv`
