@@ -1,5 +1,6 @@
 <?php
-    include("../includes/head.php");
+  require_once("../includes/ss-gv.php");
+  include("../includes/head.php");
 ?>
     <!-- main -->
     <main>
@@ -51,19 +52,26 @@
                 </div>
                 <form class = "frm" action="">
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-12">
                             <div class="label">Mã SV</div>
                             <div class="value"><input type="text" name="masv" size="10" required></div>
-                            <div class="label">Điểm Quá Trình</div>
-                            <div class="value"><input type="text" name="dqt" size="10" required></div>
-                            <div class="label">Điểm Thi</div>
-                            <div class="value"><input type="text" name="dt" size="10" required></div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="label">Điểm Quá Trình</div>
+                          <div class="value"><input type="text" name="dqt" size="10" required></div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="label">Điểm Thi</div>
+                          <div class="value"><input type="text" name="dt" size="10" required></div>
                         </div>
                         <div class="col-md-2">
                             <div class="btn-n">
                                 <button type="submit" class="btn btn-primary">Thêm</button>
                               </div>
                         </div>
+                        <div class="col-md-12">Thêm Bằng File</div>
+                        <div class="col-md-2"><input type="file" name="" id=""></div>
+                        <div class="btn col-md-12"><button class = "btn btn-primary">Update</button></div>
                     </div>
                 </form>  
                 <!-- demo -->
@@ -72,50 +80,63 @@
                     <a href="">
                       <h3 style="text-align: center;">Danh Sách Điểm</h3>
                     </a>
-                  </div>
-              <div class="list">
-                <table class="list" bgcolor="#FFFFFF">
+                </div>
+                <div class="row">
+                <div class="col-md-12">
+                        <div class="label">Lớp Học Phần</div>
+                        <div class="value">
+                            <select name="" id="">
+                                <option value="">LHP01</option>
+                                <option value="">LHP02</option>
+                                <option value="">LHP03</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                </div>
+              <div class="bangdulieu">
+                <table class="table-data" bgcolor="#FFFFFF">
                   <tr class="row-first">
+                    <td></td>
                     <td width="150">Mã Sinh Viên</td>
                     <td width="150">Điểm Quá Trình</td>
                     <td width="150">Điểm Thi</td>
-                    <td></td>
-                    <td></td>
+
                   </tr>
                   <tr>
-                    <td>175A0</td>
+                    <td><input type="checkbox" name="" id=""></td>
+                    <td>175A1</td>
                     <td>7.0</td>
                     <td>8.0</td>
-                    <td width="50"><a href="">Xóa</a></td>
-                    <td width="50"><a href="">Sửa</a></td>
+
                  </tr>
                  <tr>
-                    <td>175A0</td>
-                    <td>7.0</td>
-                    <td>8.0</td>
-                    <td width="50"><a href="">Xóa</a></td>
-                    <td width="50"><a href="">Sửa</a></td>
+                  <td><input type="checkbox" name="" id=""></td>
+                  <td>175A2</td>
+                  <td>7.0</td>
+                  <td>8.0</td>
+
                  </tr>
                  <tr>
-                    <td>175A0</td>
-                    <td>7.0</td>
-                    <td>8.0</td>
-                    <td width="50"><a href="">Xóa</a></td>
-                    <td width="50"><a href="">Sửa</a></td>
+                  <td><input type="checkbox" name="" id=""></td>
+                  <td>175A3</td>
+                  <td>7.0</td>
+                  <td>8.0</td>
+
                  </tr>
                  <tr>
-                    <td>175A0</td>
-                    <td>7.0</td>
-                    <td>8.0</td>
-                    <td width="50"><a href="">Xóa</a></td>
-                    <td width="50"><a href="">Sửa</a></td>
+                  <td><input type="checkbox" name="" id=""></td>
+                  <td>175A4</td>
+                  <td>7.0</td>
+                  <td>8.0</td>
+
                  </tr>
                  <tr>
-                    <td>175A0</td>
-                    <td>7.0</td>
-                    <td>8.0</td>
-                    <td width="50"><a href="">Xóa</a></td>
-                    <td width="50"><a href="">Sửa</a></td>
+                  <td><input type="checkbox" name="" id=""></td>
+                  <td>175A5</td>
+                  <td>7.0</td>
+                  <td>8.0</td>
+
                  </tr>
                 </table>
               </div>
@@ -124,6 +145,6 @@
         </div>
     </main>
     <!-- footer -->
-    <?php
-    include("../includes/footer.php");
+<?php
+  include("../includes/footer.php");
 ?>

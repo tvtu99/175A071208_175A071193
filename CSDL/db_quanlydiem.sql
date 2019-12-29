@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 28, 2019 lúc 03:50 AM
+-- Thời gian đã tạo: Th12 29, 2019 lúc 07:37 PM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.3
 
@@ -32,26 +32,28 @@ CREATE TABLE `diem` (
   `MaSV` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `MaMH` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `DQT` float DEFAULT NULL,
-  `DT` float DEFAULT NULL
+  `DT` float DEFAULT NULL,
+  `diemtongket` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
 
 --
 -- Đang đổ dữ liệu cho bảng `diem`
 --
 
-INSERT INTO `diem` (`MaSV`, `MaMH`, `DQT`, `DT`) VALUES
-('175A0', '1', 1, 4),
-('175A1', '1', 10, 9);
+INSERT INTO `diem` (`MaSV`, `MaMH`, `DQT`, `DT`, `diemtongket`) VALUES
+('175A0', '1', 10, 4, 6.4),
+('175A1', '1', 10, 8, 8.8),
+('175A6', '2', 1, 2, 1.6);
 
 --
 -- Bẫy `diem`
 --
 DELIMITER $$
-CREATE TRIGGER `tg_diem` AFTER INSERT ON `diem` FOR EACH ROW INSERT diemsv VALUES (null,(NEW.DQT*(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)+NEW.DT*(1.0-(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH))), NEW.MAMH, NEW.MaSV)
+CREATE TRIGGER `update_diem_qt_or_dt` BEFORE UPDATE ON `diem` FOR EACH ROW SET NEW.diemtongket = (NEW.DQT*(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)+NEW.DT*(1.0-(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)))
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `trg_update_diem` AFTER UPDATE ON `diem` FOR EACH ROW UPDATE diemsv SET diemsv.diem10 = (NEW.DQT*(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)+NEW.DT*(1.0-(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH))) WHERE diemsv.MaSV = NEW.MaSV and diemsv.MaMH = NEW.MaMH
+CREATE TRIGGER `update_diem_with_add_diem` BEFORE INSERT ON `diem` FOR EACH ROW SET NEW.diemtongket = (NEW.DQT*(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)+NEW.DT*(1.0-(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)))
 $$
 DELIMITER ;
 
@@ -173,7 +175,8 @@ CREATE TABLE `monh` (
 INSERT INTO `monh` (`MaMH`, `TenMH`, `MaN`, `STC`, `HS`) VALUES
 ('1', 'công nghệ web', 'CNTT', 3, 0.4),
 ('2', 'Phân Tích thiết kế HTTT', 'CNTT', 3, 0.4),
-('3', 'CGW', 'CNTT', 3, 0.5);
+('3', 'CGW', 'CNTT', 3, 0.5),
+('4', 'Phân Tích Hệ Thống', 'CNTT', 3, 0.4);
 
 -- --------------------------------------------------------
 
@@ -192,7 +195,9 @@ CREATE TABLE `nganh` (
 --
 
 INSERT INTO `nganh` (`MaN`, `TenN`, `MaKhoa`) VALUES
-('CNTT', 'Công nghệ Thông tin', 'CNTT');
+('CNTT', 'Công nghệ Thông tin', 'CNTT'),
+('HTPM', 'Hệ Thống Phần Mềm', 'CNTT'),
+('HTTT', 'Hệ Thống Thông Tin', 'CNTT');
 
 -- --------------------------------------------------------
 
@@ -242,6 +247,7 @@ INSERT INTO `sv` (`MaSV`, `MaL`, `HoTen`, `NamSinh`, `CMT`, `Que`) VALUES
 --
 
 CREATE TABLE `taikhoan` (
+  `hoten` varchar(30) COLLATE utf8mb4_vietnamese_ci DEFAULT NULL,
   `username` varchar(55) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `password` text COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `level` int(1) NOT NULL,
@@ -254,13 +260,13 @@ CREATE TABLE `taikhoan` (
 -- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`username`, `password`, `level`, `email`, `verified`, `verification_code`) VALUES
-('admin', '1', 1, NULL, NULL, NULL),
-('anhtuyet', 'abc', 0, 'tvtu165@gmail.com', '1', 'bb735a83a0b95f549334768de7486508'),
-('giaovien', '1', 3, NULL, NULL, NULL),
-('quanli', '1', 2, NULL, NULL, NULL),
-('sinhvien', '1', 4, NULL, NULL, NULL),
-('test2', '$2y$10$6P8gBGbFY0Dz/WzEFJzAl.wKI88GZiMmLfe0/bGpnNRl.22OKc9yq', 0, 'trinhtu16051999@gmail.com', '0', '44bb4dc1fe1d268c99252758a9c725c8');
+INSERT INTO `taikhoan` (`hoten`, `username`, `password`, `level`, `email`, `verified`, `verification_code`) VALUES
+('Admin  01', 'admin', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 4, NULL, '1', NULL),
+('Ánh Tuyết', 'anhtuyet', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 4, 'tvtu165@gmail.com', '1', 'bb735a83a0b95f549334768de7486508'),
+('Giáo Viên', 'giangvien', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 2, NULL, '1', NULL),
+('Quản Lý', 'quanli', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 3, NULL, '1', NULL),
+('Sinh viên', 'sinhvien', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 1, NULL, '1', NULL),
+('ac', 'test2', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 4, 'trinhtu16051999@gmail.com', '1', '44bb4dc1fe1d268c99252758a9c725c8');
 
 --
 -- Chỉ mục cho các bảng đã đổ

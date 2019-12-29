@@ -1,4 +1,5 @@
 <?php
+    require_once("../includes/ss-admin.php");
     include("../includes/head.php");
 ?>
     <!-- main -->
@@ -50,6 +51,9 @@
                                 <button type="submit" class="btn btn-primary">Tạo Tài Khoản</button>
                             </div>
                         </div>
+                        <div class="col-md-12">Thêm Bằng File</div>
+                        <div class="col-md-2"><input type="file" name="" id=""></div>
+                        <div class="btn col-md-12"><button class = "btn btn-primary">Update</button></div>
                     </div>
                 </form>
                 <!-- demo -->
@@ -59,7 +63,14 @@
                     <h3 style="text-align: center;">Danh Sách Tài Khoản</h3>
                 </div>
                 
+                
             <div class="bangdulieu">
+            <div class="row">
+            <div class="col-md-12">
+            <div class="label"><button class = "btn btn-primary">Tìm Kiếm</button></div>
+            <div class="value"><input type="text" name="email" size="20"></div>
+            </div>
+            </div>
                 <table class="table-data" bgcolor="#FFFFFF">
                     <tr class="row-first">
                         <td width="150">Tài Khoản</td>

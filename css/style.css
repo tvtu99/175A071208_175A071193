@@ -45,7 +45,7 @@
 }
 /*main-l*/
 .dm{
-    margin-top: 40px;
+    margin-top: 10px;
     width: 100%;
     border: solid 5px #56a4fe;
     border-top: 22px solid #56a4fe;
@@ -92,7 +92,7 @@ ul.menu li a:hover{
 }
 /*main-r*/
 .daumuc{
-    padding-top: 40px;
+    padding-top: 10px;
 }
 
 .daumuc a h3,.daumuc h3{

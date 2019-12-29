@@ -8,6 +8,8 @@
     <title>Tra Cứu Điểm</title>
     <link rel="stylesheet" type ="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type ="text/css" href="./css/style.css">
+    <link rel="stylesheet" href="./login_logout_sub/style-php.css">
+    <link rel="stylesheet" href="php/quantriweb/style-ql.css">
 </head>
 <body>
     <div class="container-fluid">
@@ -88,15 +90,19 @@
                     </div>
                     <form class="frm" action="" method="GET">
                         <div class="row">
-                          <div class="col-md-4">
+                          <div class="col-md-12">
+                            <div class="label">Chứng Minh Thư</div>
+                            <div class="value"><input type="text" name="cmt" size="20" maxlenght = "13" required></div>
+                          </div>
+                          <div class="col-md-12">
                             <div class="label">Mã Sinh Viên</div>
-                            <div class="value"><input type="text" name="masv" size="20" required></div>
+                            <div class="value"><input type="text" name="masv" size="20" maxlenght = "8" required></div>
                           </div>					
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="label">Năm Học</div>
                             <div class="value"><input type="text" name="namhoc" size="20" required></div>
                           </div>
-                          <div class="col-md-4">
+                          <div class="col-md-12">
                             <div class="label">Kì Học</div>
                             <div class="value">
                                 <select name="kihoc" id="">
@@ -104,7 +110,9 @@
                                     <option>2</option>						
                                 </select>
                             </div>
-                            <div class="label">Giai Đoạn</div>
+                        </div>
+                        <div class="col-md-12">
+                        <div class="label">Giai Đoạn</div>
                             <div class="value">
                                 <select name="giaidoan" id="">
                                     <option>1</option>
@@ -119,39 +127,7 @@
                             <button type="submit" class="btn btn-primary">Tra Cứu</button>
                         </div>
                     </form>
-                    <form class="frm" action="" method="GET">
-                      <div class="row">
-                        <div class="col-md-4">
-                          <div class="label">Chứng Minh Thư</div>
-                          <div class="value"><input type="text" name="cmt" size="20" required></div>
-                        </div>					
-                        <div class="col-md-4">
-                          <div class="label">Năm Học</div>
-                          <div class="value"><input type="text" name="namhoc" size="20" required></div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="label">Kì Học</div>
-                          <div class="value">
-                              <select name="kihoc" id="">
-                                  <option>1</option>
-                                  <option>2</option>						
-                              </select>
-                          </div>
-                          <div class="label">Giai Đoạn</div>
-                          <div class="value">
-                              <select name="giaidoan" id="">
-                                  <option>1</option>
-                                  <option>2</option>	
-                                  <option>3</option>
-                                  <option>4</option>					
-                              </select>
-                          </div>
-                          </div>
-                      </div>					
-                      <div class="btn-n">
-                          <button type="submit" class="btn btn-primary">Tra Cứu</button>
-                      </div>
-                  </form>
+                    
                 </div>
                 <div class="bangdulieu">
                   <table class="table-data" bgcolor="#FFFFFF">

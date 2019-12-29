@@ -1,5 +1,6 @@
 <?php
-    include("../includes/head.php");
+  require_once("../includes/ss-qtw.php");
+  include("../includes/head.php");
 ?>
     <!-- main -->
     <main>
@@ -10,6 +11,7 @@
                 <div class="dm">
                   <h5 style="padding: 5px;">Danh Mục Chính</h5>
                   <ul class="menu">
+                    <li><a href="qlkhoa.php"><span>QL KHOA</span></a></li>
                     <li><a href="quantri.php"><span>QL Ngành Học</span></a></li>
                     <li><a href="qlmonhoc.php" ><span>QL Môn Học</span></a></li>
                     <li><a href="qlgiaidoan.php" ><span>QL Giai Đoạn Học</span></a></li>
@@ -45,7 +47,7 @@
                     </div>
                     <div class="col-md-12">
                         <div class="label">Mã Giảng Viên</div>
-                        <div class="value"><input type="text" name="magv" size="4" maxlength="1" required></div>
+                        <div class="value"><input type="text" name="magv" size="4" maxlength="8" required></div>
                     </div>
                     <div class="col-md-2"></div>
                     <div class="col-md-2">
@@ -53,75 +55,62 @@
                             <button type="submit" class="btn btn-primary">Thêm</button>
                         </div>
                     </div>
+                    <div class="col-md-12">Thêm Bằng File</div>
+                    <div class="col-md-2"><input type="file" name="" id=""></div>
+                    <div class="btn col-md-12"><button class = "btn btn-primary">Update</button></div>
                 </div>
                 </form>
                 <!-- demo -->
                 <!-- Biến maLHP từ form truyền -->
                 
-                <div class="daumuc">
-                    <h3 style="text-align: center;">Danh Sách Lớp Học Phần</h3>
-                </div>
-                
-            <div class="bangdulieu">
-                <table class="table-data" bgcolor="#FFFFFF">
-                    <tr class="row-first">
-                        <td width="150">Mã Lớp HP</td>
-                        <td width="200">Tên Lớp HP</td>
-                        <td width="120">Mã Môn Học</td>
-                        <td width="120">Mã Giai Đoạn</td>
-                        <td width="120">Mã Giảng Viên</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>LHP01</td>
-                        <td>QT01</td>
-                        <td>CNW</td>
-                        <td>GD22019</td>
-                        <td>GV01</td>
-                        <td><a href="">Xóa</a></td>
-                        <td><a href="">Sửa</a></td>
-                    </tr>
-                    <tr>
-                        <td>LHP01</td>
-                        <td>QT01</td>
-                        <td>CNW</td>
-                        <td>GD22019</td>
-                        <td>GV01</td>
-                        <td><a href="">Xóa</a></td>
-                        <td><a href="">Sửa</a></td>
-                    </tr>
-                    <tr>
-                        <td>LHP01</td>
-                        <td>QT01</td>
-                        <td>CNW</td>
-                        <td>GD22019</td>
-                        <td>GV01</td>
-                        <td><a href="">Xóa</a></td>
-                        <td><a href="">Sửa</a></td>
-                    </tr>
-                    <tr>
-                        <td>LHP01</td>
-                        <td>QT01</td>
-                        <td>CNW</td>
-                        <td>GD22019</td>
-                        <td>GV01</td>
-                        <td><a href="">Xóa</a></td>
-                        <td><a href="">Sửa</a></td>
-                    </tr>
-                    <tr>
-                        <td>LHP01</td>
-                        <td>QT01</td>
-                        <td>CNW</td>
-                        <td>GD22019</td>
-                        <td>GV01</td>
-                        <td><a href="">Xóa</a></td>
-                        <td><a href="">Sửa</a></td>
-                    </tr>
-                    
-                </table>
-                
-                </div>
+                <form action="" method="post">
+                    <div class="daumuc">
+                        <h3 style="text-align: center;">Danh Sách Lớp Học Phần</h3>
+                    </div>
+                    <input type="submit" value="Cập Nhập">
+                    <div class="bangdulieu">
+                        <table class="table-data" bgcolor="#FFFFFF">
+                            <tr class="row-first">
+                                <td></td>
+                                <td width="150">Mã Lớp HP</td>
+                                <td width="200">Tên Lớp HP</td>
+                                <td width="120">Mã Môn Học</td>
+                                <td width="120">Mã Giai Đoạn</td>
+                                <td width="120">Mã Giảng Viên</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>LHP01</td>
+                                <td>QT01</td>
+                                <td>CNW</td>
+                                <td>GD22019</td>
+                                <td>GV01</td>
+                                <td><a href="">Xóa</a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>LHP02</td>
+                                <td>QT01</td>
+                                <td>CNW</td>
+                                <td>GD22019</td>
+                                <td>GV01</td>
+                                <td><a href="">Xóa</a></td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="" id=""></td>
+                                <td>LHP03</td>
+                                <td>QT01</td>
+                                <td>CNW</td>
+                                <td>GD22019</td>
+                                <td>GV01</td>
+                                <td><a href="">Xóa</a></td>
+                            </tr>
+                            
+                        </table>
+                        
+                    </div>
+                </form>
             </div> 
             
         </div>

@@ -1,5 +1,6 @@
 <?php
-    include("../includes/head.php");
+  require_once("../includes/ss-qtw.php");
+  include("../includes/head.php");
 ?>
     <!-- main -->
     <main>
@@ -10,6 +11,7 @@
                 <div class="dm">
                   <h5 style="padding: 5px;">Danh Mục Chính</h5>
                   <ul class="menu">
+                  <li><a href="qlkhoa.php"><span>QL KHOA</span></a></li>
                     <li><a href="quantri.php" class="active"><span>QL Ngành Học</span></a></li>
                     <li><a href="qlmonhoc.php"  ><span>QL Môn Học</span></a></li>
                     <li><a href="qlgiaidoan.php" ><span>QL Giai Đoạn Học</span></a></li>
@@ -26,19 +28,33 @@
                 </div>
                 <form class="frm" action="" method="post">
                 <div class="row">
-                    <div class="col-md-4">
+                <div class="col-md-12">
+                        <div class="label">Mã Khoa</div>
+                        <div class="value">
+                            <select>
+                                <option value="$makhoa">Công Nghệ Thông Tin</option>
+                                <option value="$makhoa">Hệ Thống Thông Tin</option>
+                                <option value="$makhoa">Phần Mềm</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
                         <div class="label">Mã Ngành Học</div>
                         <div class="value"><input type="text" name="man" size="15" maxlength="8" required></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-12">
                         <div class="label">Tên Ngành Học</div>
                         <div class="value"><input type="text" name="tenn" size="20" maxlength="30" required></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-12"><br></div>
+                    <div class="col-md-12">
                         <div class="btn-n">
                             <button type="submit" class="btn btn-primary">Thêm</button>
                         </div>
                     </div>
+                    <div class="col-md-12">Thêm Bằng File</div>
+                    <div class="col-md-2"><input type="file" name="" id=""></div>
+                    <div class="btn col-md-12"><button class = "btn btn-primary">Update</button></div>
                 </div>
                 </form>
                 <!-- demo -->

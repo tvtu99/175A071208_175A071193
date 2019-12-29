@@ -21,6 +21,10 @@
             <div class="logo"><a href="../../index.php"><img src="../../img/logo.png" alt="" style="width : 80px;"></a></div>
             <a href="../../index.php"><H2>Đại Học Thủy Lợi</H2></a>
         </div>
-        <div class="dndx col-md-1"><a href="">Trịnh Tú</a></div>
-        <div class="dndx col-md-1"><a href="../../login_logout_sub/dangnhap.php">Thoát</a></div>
+        <div class="dndx col-md-1">
+        <?php
+            echo 'Xin Chào : '.$_SESSION['username'].' ';
+        ?>
+        </div>
+        <div class="dndx col-md-1"><a href="../../login_logout_sub/xoa-ss.php">Thoát</a></div>
     </div>

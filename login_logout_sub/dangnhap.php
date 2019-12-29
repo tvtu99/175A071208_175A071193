@@ -1,3 +1,28 @@
+<?php
+session_start();
+if(isset($_SESSION['level']))
+{  
+  if($_SESSION['verified'] == '1')
+  {
+    if($_SESSION['level']== '1' )
+    {
+      header('location:../php/sinhvien/sinhvien.php');
+    }
+    else if($_SESSION['level']== '2')
+    {
+      header('location:../php/giangvien/giangvien.php');
+    }
+    else if($_SESSION['level'] == '3')
+    {
+      header('location:../php/quantriweb/qlkhoa.php');
+    }
+    else if($_SESSION['level']== '4')
+    {
+      header('location:../php/qtv/qtv.php');
+    }
+  }  
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,15 +43,15 @@
         <div class="dndx col-md-2">Chào Mừng</div>
     </div>
     <div class="form-ac">
-        <form action="" method="GET">
+        <form action="ss_login.php" method="post">
             <div class="container">
-              <label for="uname"><b>Username</b></label>
-              <input type="text" placeholder="Enter Username" name="name" required>
+              <label for="uname"><b>Tài Khoản</b></label>
+              <input type="text" placeholder="Enter Username" name="user" required>
           
-              <label for="psw"><b>Password</b></label>
+              <label for="psw"><b>Mật Khẩu</b></label>
               <input type="password" placeholder="Enter Password" name="pass" required>
                   
-              <button type="submit">Login</button>
+              <button type="submit">Đăng Nhập</button>
               <label>
                 <input type="checkbox" checked="checked" name="remember"> Remember me
               </label>

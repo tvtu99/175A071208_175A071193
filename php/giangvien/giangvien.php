@@ -1,5 +1,6 @@
 <?php
-    include("../includes/head.php");
+  require_once("../includes/ss-gv.php");
+  include("../includes/head.php");
 ?>
     <!-- main -->
     <main>
@@ -44,6 +45,9 @@
                       <button type="submit" class="btn btn-primary">Thêm</button>
                     </div>
                   </div>
+                  <div class="col-md-12">Thêm Bằng File</div>
+                    <div class="col-md-2"><input type="file" name="" id=""></div>
+                    <div class="btn col-md-12"><button class = "btn btn-primary">Update</button></div>
                 </div>
               </form>
                 <!-- demo -->
@@ -57,22 +61,22 @@
                   </tr>
                   <tr>
                     <td>LHP1</td>
-                    <td>175A0</td>
+                    <td>175A1</td>
                     <td><a href="">Xóa</a></td> <!-- gọi hàm xóa -->
                   </tr>
                   <tr>
                     <td>LHP1</td>
-                    <td>175A0</td>
+                    <td>175A2</td>
                     <td><a href="">Xóa</a></td> <!-- gọi hàm xóa -->
                   </tr>
                   <tr>
                     <td>LHP1</td>
-                    <td>175A0</td>
+                    <td>175A3</td>
                     <td><a href="">Xóa</a></td> <!-- gọi hàm xóa -->
                   </tr>
                   <tr>
                     <td>LHP1</td>
-                    <td>175A0</td>
+                    <td>175A4</td>
                     <td><a href="">Xóa</a></td> <!-- gọi hàm xóa -->
                   </tr>
                 </table>
