@@ -54,30 +54,31 @@
                 <div class="daumuc">
                     <h3 style="text-align: center;">Danh Sách Lớp Học Phần Và Giảng Viên</h3>
                 </div>
-                <div class="row">
-                <div class="col-md-12">
-                        <div class="label">Giai Đoạn</div>
-                        <div class="value">
-                            <select name="" id="">
-                                <option value="">2017</option>
-                                <option value="">2016</option>
-                                <option value="">2015</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="label">Môn Học</div>
-                        <div class="value">
-                            <select name="" id="">
-                                <option value="">Công Nghệ WEb</option>
-                                <option value="">A</option>
-                                <option value="">B</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+                
                 <div class="bangdulieu">
                     <form action="">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="label">Giai Đoạn</div>
+                            <div class="value">
+                                <select name="" id="">
+                                    <option value="">2017</option>
+                                    <option value="">2016</option>
+                                    <option value="">2015</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="label">Môn Học</div>
+                            <div class="value">
+                                <select name="" id="">
+                                    <option value="">Công Nghệ WEb</option>
+                                    <option value="">A</option>
+                                    <option value="">B</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
                     <input type="submit" value="Cập Nhâp">
                     <table class="table-data" bgcolor="#FFFFFF">
                         <tr class="row-first">

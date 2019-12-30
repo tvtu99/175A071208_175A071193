@@ -67,8 +67,32 @@
                     <div class="daumuc">
                         <h3 style="text-align: center;">Danh Sách Lớp Học Phần</h3>
                     </div>
-                    <input type="submit" value="Cập Nhập">
+                    <div class="row">
+                    <div class="col-md-6">
+                    <div class="label">Giai Đoạn</div>
+                    <div class="value">
+                        <select name="" id="">
+                            <option value="">2017</option>
+                            <option value="">2016</option>
+                            <option value="">2015</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="col-md-6">
+                    <div class="label">Ngành Học</div>
+                    <div class="value">
+                        <select name="" id="">
+                            <option value="">Công Nghệ Thông Tin</option>
+                            <option value="">Quản Lý</option>
+                            <option value="">Xây Dựng</option>
+                        </select>
+                    </div>
+                    </div>
+                    <div class="btn col-md-12"><button>Xem</button></div>
+                    </div>
+                    
                     <div class="bangdulieu">
+                    <input type="submit" value="Cập Nhập">
                         <table class="table-data" bgcolor="#FFFFFF">
                             <tr class="row-first">
                                 <td></td>

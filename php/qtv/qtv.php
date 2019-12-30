@@ -81,36 +81,36 @@
                     </tr>
                     <tr>
                         <td>trinhtu99</td>
-                        <td>3</td>
-                        <td>trinhtu165@gmail.com</td>
+                        <td>1</td>
+                        <td>A@gmail.com</td>
                         <td><a href="">Xóa</a></td>
                         <td><a href="">Sửa</a></td>
                     </tr>
                     <tr>
-                        <td>trinhtu99</td>
-                        <td>3</td>
-                        <td>trinhtu165@gmail.com</td>
+                        <td>trinhtu991</td>
+                        <td>2</td>
+                        <td>B@gmail.com</td>
                         <td><a href="">Xóa</a></td>
                         <td><a href="">Sửa</a></td>
                     </tr>
                     <tr>
-                        <td>trinhtu99</td>
+                        <td>trinhtu992</td>
                         <td>3</td>
-                        <td>trinhtu165@gmail.com</td>
+                        <td>V@gmail.com</td>
                         <td><a href="">Xóa</a></td>
                         <td><a href="">Sửa</a></td>
                     </tr>
                     <tr>
-                        <td>trinhtu99</td>
-                        <td>3</td>
-                        <td>trinhtu165@gmail.com</td>
+                        <td>trinhtu993</td>
+                        <td>2</td>
+                        <td>X@gmail.com</td>
                         <td><a href="">Xóa</a></td>
                         <td><a href="">Sửa</a></td>
                     </tr>
                     <tr>
-                        <td>trinhtu99</td>
+                        <td>trinhtu994</td>
                         <td>3</td>
-                        <td>trinhtu165@gmail.com</td>
+                        <td>Y@gmail.com</td>
                         <td><a href="">Xóa</a></td>
                         <td><a href="">Sửa</a></td>
                     </tr>

@@ -8,7 +8,7 @@
     <title>Tra Cứu Điểm</title>
     <link rel="stylesheet" type ="text/css" href="css/bootstrap.min.css">
     <link rel="stylesheet" type ="text/css" href="./css/style.css">
-    <link rel="stylesheet" href="./login_logout_sub/style-php.css">
+    <!-- <link rel="stylesheet" href="./login_logout_sub/style-php.css"> -->
     <link rel="stylesheet" href="php/quantriweb/style-ql.css">
 </head>
 <body>

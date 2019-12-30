@@ -62,6 +62,18 @@
                 <div class="daumuc">
                     <h3 style="text-align: center;">Ngành Học Đại Học Thủy Lợi</h3>
                 </div>
+                <div class="row">
+                <div class="col-md-12">
+                        <div class="label">Xem Theo Khoa</div>
+                        <div class="value">
+                            <select name="" id="">
+                                <option value="">Cong nghe thong tin</option>
+                                <option value="">quan tri</option>
+                                <option value="">abc</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
                 <div class="bangdulieu">
                 <table class="table-data" bgcolor="#FFFFFF">
                     <tr class="row-first">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 29, 2019 lúc 07:37 PM
+-- Thời gian đã tạo: Th12 30, 2019 lúc 04:15 PM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.3
 
@@ -31,6 +31,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `diem` (
   `MaSV` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `MaMH` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `diem1` float DEFAULT NULL,
+  `hs1` float DEFAULT NULL,
+  `diem2` float DEFAULT NULL,
+  `hs2` float DEFAULT NULL,
+  `diem3` float DEFAULT NULL,
+  `hs3` float DEFAULT NULL,
   `DQT` float DEFAULT NULL,
   `DT` float DEFAULT NULL,
   `diemtongket` float DEFAULT NULL
@@ -40,22 +46,51 @@ CREATE TABLE `diem` (
 -- Đang đổ dữ liệu cho bảng `diem`
 --
 
-INSERT INTO `diem` (`MaSV`, `MaMH`, `DQT`, `DT`, `diemtongket`) VALUES
-('175A0', '1', 10, 4, 6.4),
-('175A1', '1', 10, 8, 8.8),
-('175A6', '2', 1, 2, 1.6);
+INSERT INTO `diem` (`MaSV`, `MaMH`, `diem1`, `hs1`, `diem2`, `hs2`, `diem3`, `hs3`, `DQT`, `DT`, `diemtongket`) VALUES
+('175A0', '1', 7, 0.3, 7, 0.3, 9, 0.4, 7.8, 10, 9.12);
 
 --
 -- Bẫy `diem`
 --
 DELIMITER $$
-CREATE TRIGGER `update_diem_qt_or_dt` BEFORE UPDATE ON `diem` FOR EACH ROW SET NEW.diemtongket = (NEW.DQT*(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)+NEW.DT*(1.0-(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)))
+CREATE TRIGGER `update_diem_qt_or_dt` BEFORE UPDATE ON `diem` FOR EACH ROW SET new.dqt = new.diem1*new.hs1 +new.diem2*new.hs2 +new.diem3*new.hs3,
+ NEW.diemtongket = (NEW.DQT*(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)+NEW.DT*(1.0-(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)))
 $$
 DELIMITER ;
 DELIMITER $$
-CREATE TRIGGER `update_diem_with_add_diem` BEFORE INSERT ON `diem` FOR EACH ROW SET NEW.diemtongket = (NEW.DQT*(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)+NEW.DT*(1.0-(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)))
+CREATE TRIGGER `update_diem_with_add_diem` BEFORE INSERT ON `diem` FOR EACH ROW SET new.dqt = new.diem1*new.hs1 +new.diem2*new.hs2 +new.diem3*new.hs3, NEW.diemtongket = (NEW.DQT*(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)+NEW.DT*(1.0-(SELECT monh.HS FROM monh WHERE monh.MaMH = NEW.MaMH)))
 $$
 DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `dsl`
+--
+
+CREATE TABLE `dsl` (
+  `ID` int(11) NOT NULL,
+  `MaLHP` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `MaSV` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `dsl`
+--
+
+INSERT INTO `dsl` (`ID`, `MaLHP`, `MaSV`) VALUES
+(1, '1', '175A0'),
+(2, '1', '175A1'),
+(3, '1', '175A3'),
+(4, '1', '175A4'),
+(5, '2', '175A0'),
+(6, '2', '175A1'),
+(7, '2', '175A3'),
+(8, '2', '175A4'),
+(9, '3', '175A0'),
+(10, '3', '175A1'),
+(11, '3', '175A3'),
+(12, '3', '175A4');
 
 -- --------------------------------------------------------
 
@@ -107,6 +142,27 @@ INSERT INTO `gv` (`MaGV`, `HoTen`, `NamSinh`, `Que`) VALUES
 ('GV3', 'Nguyễn Văn Đông', 1982, 'Hà Nội'),
 ('GV4', 'Nguyễn Văn Hùng', 1984, 'Hà Nội'),
 ('GV5', 'Phạm Văn Đồng', 1972, 'Hà Nội');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `khoa`
+--
+
+CREATE TABLE `khoa` (
+  `MaKhoa` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `TenKhoa` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `MaTruong` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `khoa`
+--
+
+INSERT INTO `khoa` (`MaKhoa`, `TenKhoa`, `MaTruong`) VALUES
+('CNTT', 'Công Nghệ Thông Tin', 'TLU'),
+('KT', 'Kinh Tế', 'TLU'),
+('KTXD', 'Kiến Trúc Và Xây Dựng', 'TLU');
 
 -- --------------------------------------------------------
 
@@ -268,6 +324,24 @@ INSERT INTO `taikhoan` (`hoten`, `username`, `password`, `level`, `email`, `veri
 ('Sinh viên', 'sinhvien', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 1, NULL, '1', NULL),
 ('ac', 'test2', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 4, 'trinhtu16051999@gmail.com', '1', '44bb4dc1fe1d268c99252758a9c725c8');
 
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `truong`
+--
+
+CREATE TABLE `truong` (
+  `MaTruong` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `TenTruong` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
+
+--
+-- Đang đổ dữ liệu cho bảng `truong`
+--
+
+INSERT INTO `truong` (`MaTruong`, `TenTruong`) VALUES
+('TLU', 'Đại Học Thủy Lợi');
+
 --
 -- Chỉ mục cho các bảng đã đổ
 --
@@ -281,6 +355,14 @@ ALTER TABLE `diem`
   ADD KEY `diem_ibfk_2` (`MaMH`);
 
 --
+-- Chỉ mục cho bảng `dsl`
+--
+ALTER TABLE `dsl`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `MaLHP` (`MaLHP`,`MaSV`),
+  ADD KEY `MaSV` (`MaSV`);
+
+--
 -- Chỉ mục cho bảng `giaidoan`
 --
 ALTER TABLE `giaidoan`
@@ -291,6 +373,13 @@ ALTER TABLE `giaidoan`
 --
 ALTER TABLE `gv`
   ADD PRIMARY KEY (`MaGV`);
+
+--
+-- Chỉ mục cho bảng `khoa`
+--
+ALTER TABLE `khoa`
+  ADD PRIMARY KEY (`MaKhoa`),
+  ADD KEY `MaTruong` (`MaTruong`);
 
 --
 -- Chỉ mục cho bảng `lop`
@@ -335,6 +424,22 @@ ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`username`);
 
 --
+-- Chỉ mục cho bảng `truong`
+--
+ALTER TABLE `truong`
+  ADD PRIMARY KEY (`MaTruong`);
+
+--
+-- AUTO_INCREMENT cho các bảng đã đổ
+--
+
+--
+-- AUTO_INCREMENT cho bảng `dsl`
+--
+ALTER TABLE `dsl`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- Các ràng buộc cho các bảng đã đổ
 --
 
@@ -344,6 +449,19 @@ ALTER TABLE `taikhoan`
 ALTER TABLE `diem`
   ADD CONSTRAINT `diem_ibfk_1` FOREIGN KEY (`MaSV`) REFERENCES `sv` (`MaSV`),
   ADD CONSTRAINT `diem_ibfk_2` FOREIGN KEY (`MaMH`) REFERENCES `monh` (`MaMH`);
+
+--
+-- Các ràng buộc cho bảng `dsl`
+--
+ALTER TABLE `dsl`
+  ADD CONSTRAINT `dsl_ibfk_1` FOREIGN KEY (`MaLHP`) REFERENCES `lophp` (`MaLHP`),
+  ADD CONSTRAINT `dsl_ibfk_2` FOREIGN KEY (`MaSV`) REFERENCES `sv` (`MaSV`);
+
+--
+-- Các ràng buộc cho bảng `khoa`
+--
+ALTER TABLE `khoa`
+  ADD CONSTRAINT `khoa_ibfk_1` FOREIGN KEY (`MaTruong`) REFERENCES `truong` (`MaTruong`);
 
 --
 -- Các ràng buộc cho bảng `lophp`

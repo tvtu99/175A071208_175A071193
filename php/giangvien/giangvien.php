@@ -13,6 +13,7 @@
                   <ul class="menu">
                     <li><a href="giangvien.php" class="active"><span>Nhập Danh Sách Lớp</span></a></li>
                     <li><a href="nhapdiem.php"><span>Nhập Điểm</span></a></li>
+                    <li><a href="diemthi.php"><span>Nhập Điểm Thi</span></a></li>
                   </ul>	   
                 </div>
                 
