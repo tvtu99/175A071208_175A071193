@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +13,11 @@
     <link rel="stylesheet" type ="text/css" href="./css/style.css">
     <!-- <link rel="stylesheet" href="./login_logout_sub/style-php.css"> -->
     <link rel="stylesheet" href="php/quantriweb/style-ql.css">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.4.1.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/tracuudiem.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -88,65 +96,57 @@
                             <h3 style="text-align: center;">Tra Cứu Điểm</h3>
                         </a>
                     </div>
-                    <form class="frm" action="" method="GET">
+                    <form class="frm" id = "frm-tcd">
                         <div class="row">
                           <div class="col-md-12">
                             <div class="label">Chứng Minh Thư</div>
-                            <div class="value"><input type="text" name="cmt" size="20" maxlenght = "13" required></div>
+                            <div class="value"><input type="text" name="cmt"  size="20" maxlenght = "12" value = "1099017269" required></div>
                           </div>
                           <div class="col-md-12">
                             <div class="label">Mã Sinh Viên</div>
-                            <div class="value"><input type="text" name="masv" size="20" maxlenght = "8" required></div>
+                            <div class="value"><input type="text" name="masv" size="20" maxlenght = "8" value="175A0" required></div>
                           </div>					
                           <div class="col-md-12">
                             <div class="label">Năm Học</div>
-                            <div class="value"><input type="text" name="namhoc" size="20" required></div>
+                            <div class="value"><input type="text" name="namhoc" size="20" value ="2019" required></div>
                           </div>
                           <div class="col-md-12">
                             <div class="label">Kì Học</div>
                             <div class="value">
-                                <select name="kihoc" id="">
-                                    <option>1</option>
-                                    <option>2</option>						
+                                <select name="kihoc" id="kihoc">
+                                  <option value="1">1</option>
+                                  <option value="2">2</option>						
                                 </select>
                             </div>
                         </div>
                         <div class="col-md-12">
                         <div class="label">Giai Đoạn</div>
                             <div class="value">
-                                <select name="giaidoan" id="">
-                                    <option>1</option>
-                                    <option>2</option>	
-                                    <option>3</option>
-                                    <option>4</option>					
+                                <select name="giaidoan" id="giaidoan">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>	
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>					
                                 </select>
                             </div>
                             </div>
                         </div>					
                         <div class="btn-n">
-                            <button type="submit" class="btn btn-primary">Tra Cứu</button>
+                            <button id = "tracuudiem" type="button" class="btn btn-primary">Tra Cứu</button>
                         </div>
                     </form>
                     
                 </div>
                 <div class="bangdulieu">
-                  <table class="table-data" bgcolor="#FFFFFF">
+                  <table class="table-data" id ="table-tcd" bgcolor="#FFFFFF">
                     <tr class="row-first">
                       <td width="150">Mã Sinh Viên</td>
                       <td width="100">Giai Đoạn</td>
-                      <td width="150">Mã Môn Học</td>
+                      <td width="150">Tên Môn Học</td>
                       <td width="150">Quá Trình</td>													
                       <td width="150">Điểm Thi</td>
                       <td width="70">Điểm</td>
                     </tr>
-                    <tr>
-                      <td>175A0</td>
-                          <td>GD12019</td>
-                          <td>CNW</td>
-                          <td>7.0</td>
-                          <td>7.0</td>
-                          <td>7.0</td>
-                      </tr>
                   </table>
                   
                 </div>
@@ -202,10 +202,6 @@
       </div>
     </div>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../js/jquery-3.4.1.js"></script>
-    <script src="../js/bootstrap.js"></script>
-    <script src="../js/script.js"></script>
+    
 </body>
 </html>
