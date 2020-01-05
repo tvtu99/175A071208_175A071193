@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    //click button tra cứu điểm
     $("#tracuudiem").click(function () { 
         var data = $("#frm-tcd").serialize();
         $.ajax({

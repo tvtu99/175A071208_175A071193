@@ -67,7 +67,8 @@ if($_POST){
                                     verification_code = ?, 
                                     verified = '0',
                                     username =?,
-                                    password = ?";
+                                    password = ?,
+                                    level = '1'";
     
                         $stmt = $con->prepare($query);
     
