@@ -1,6 +1,7 @@
 <?php
+//Gửi dữ liệu đăng nhập đến trang ss_login để kiểm tra
 session_start();
-if(isset($_SESSION['level']))
+if(isset($_SESSION['level'])) //phân quyền để chuyển trang
 {  
   if($_SESSION['verified'] == '1')
   {

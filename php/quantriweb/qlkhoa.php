@@ -1,8 +1,7 @@
 <?php
 require_once("../includes/ss-qtw.php");
 include("../includes/head.php");
-$dbcon = mysqli_connect("localhost","trinhtu","trinhtu15","db_quanlydiem"); //connect
-mysqli_set_charset($dbcon, 'utf8');
+include("../includes/conn.php");
 
 function hienthi($dbcon)
 {

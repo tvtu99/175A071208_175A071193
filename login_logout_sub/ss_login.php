@@ -10,7 +10,6 @@ if(!$dbcon)
 }
 else
 {
-    //$hashed_pass = password_hash(''.$pass.'',PASSWORD_DEFAULT);
     $query = "SELECT * from taikhoan where username = '$user' ";
     $kq = mysqli_query($dbcon,$query); //truyen sql vao mysql
     if(mysqli_num_rows($kq) > 0)  //kiem tra dong in ra > 0

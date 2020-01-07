@@ -2,8 +2,7 @@
 $makhoa = $_POST['makhoa'];
 $tenkhoa = $_POST['tenkhoa'];
 
-$dbcon = mysqli_connect("localhost","trinhtu","trinhtu15","db_quanlydiem"); //connect
-mysqli_set_charset($dbcon, 'utf8');
+include("../../includes/conn.php");
 if(!$dbcon)
 {
     die('loi ket loi :' .mysqli_connect_error()); //bao loi

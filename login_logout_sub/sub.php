@@ -27,7 +27,7 @@ if($_POST){
             $query = "SELECT username FROM taikhoan WHERE email = ? and verified = '1'"; //? thay the gia tri bằng bindParam
             $stmt = $con->prepare( $query );
             $stmt->bindParam(1, $email); //chen gia tri vao ? thu 1
-            $stmt->execute(); //run
+            $stmt->execute(); //run -> chạy câu lệnh
             $num = $stmt->rowCount(); //so hang
     
             if($num>0){
