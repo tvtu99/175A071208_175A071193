@@ -1,10 +1,24 @@
 <?php
-  require_once("../includes/ss-qtw.php");
-  include("../includes/head.php");
+require_once("../includes/ss-qtw.php");
+include("../includes/head.php");
+include("./xuly/import-monhoc.php"); //import môn học bang file
+include("../includes/conn.php");
+
+function khoa($dbcon){
+    include("../includes/conn.php");
+    $output = '<option value=""></option>';  
+    $sql = "SELECT * FROM `khoa` WHERE 1";  
+    $kq = mysqli_query($dbcon, $sql);  
+    while($row = mysqli_fetch_assoc($kq))  
+    {  
+        $output .= '<option value="'.$row['MaKhoa'].'">'.$row['TenKhoa'].'</option>';  
+    }  
+    mysqli_close($dbcon);
+    return $output;    
+}
 ?>
     <!-- main -->
     <main>
-      
         <div class="row" style="margin-top: 30px;">
             <!-- main-left -->
             <div class="main-l col-md-3">
@@ -26,9 +40,9 @@
                 <div class="daumuc">
                 <h3 style="text-align: center;">Quản Lý Môn Học</h3>
                 </div>
-                <form class="frm" action="" method="post">
+                <form class="frm" action = "" method = "POST" id="" enctype="multipart/form-data">
                 <div class="row row-qlmh">
-                    <div class="col-md-12">
+                    <!-- <div class="col-md-12">
                         <div class="label">Mã Ngành</div>
                         <div class="value">
                             <select name="man" id="">
@@ -59,94 +73,69 @@
                         <div class="btn-n">
                             <button type="submit" class="btn btn-primary">Thêm</button>
                         </div>
-                    </div>
-                    <div class="col-md-12">Thêm Bằng File</div>
-                    <div class="col-md-2"><input type="file" name="" id=""></div>
-                    <div class="btn col-md-12"><button class = "btn btn-primary">Update</button></div>
+                    </div> -->
+                    <div class="col-md-12">Thêm Bằng File .CSV(MaMH, TenMH, MaN, Số Tín Chỉ, Hệ số Quá Trình(0.4))<br><br></div>
+                    <div class="col-md-2"><input type="file" name="file" id="file" accept=".csv"></div>
+                    <div class="btn col-md-12"><button name ="import" class = "btn btn-primary">IMPORT</button></div>
                 </div>
                 </form>
-                <!-- demo -->
-                <!-- Biến maLHP từ form truyền -->
-                
+                <div> <!-- Thông báo việc import -->
+                    <?php
+                    echo $out1;
+                    echo $out2;
+                    echo $out3;
+                    ?>
+                </div>
                 
                 <div class="daumuc">
                     <h3 style="text-align: center;">Danh Sách Môn Học</h3>
                 </div>
-                <form action="" method="post">
+                
                 <div class="row">
+                    <div class="col-md-12">
+                        <div class="label">Mã Khoa</div>
+                        <div class="value">
+                            <select name="show-khoa" id="show-khoa">
+                            
+                                <?php
+                                echo khoa($dbcon);
+                                ?>
+                            </select>
+                        </div>
+                        <!-- <script>  
+                            
+                        </script> -->
+                    </div>
                     <div class="col-md-12">
                         <div class="label">Mã Ngành</div>
                         <div class="value">
-                            <select name="" id="">
-                                <option value="">Công Nghệ Thông Tin</option>
-                                <option value="">Quản TRị</option>
+                            <select name="" id="shownganh">
+                                
                             </select>
                         </div>
+                        <!-- <script>  
+                              
+                        </script> -->
                     </div>
-                    <div class="col-md-12"><br></div>
-                    <button class = "col-md-2 btn btn-primary">Cập Nhập</button>
+                    
                 </div>
                 <div class="bangdulieu">
-                    <table class="table-data" bgcolor="#FFFFFF">
-                        <tr class="row-first">
-                            <td></td>
-                            <td width="150">Mã Ngành</td>
+                    <table class="table-data" bgcolor="#FFFFFF" id ="tb_show_mon">
+                        <!-- <tr class="row-first">
                             <td width="150">Mã Môn</td>
                             <td width="300">Tên Môn</td>
+                            <td width="150">Mã Ngành</td>
                             <td width="150">Số Tín Chỉ</td>
                             <td width="150">Hệ Số</td>
+                            <td></td>
                             <td></td>                            
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>CNTT</td>
-                            <td>CNW</td>
-                            <td>Công Nghệ WEB</td>
-                            <td>3</td>
-                            <td>0.4</td>
-                            <td><a href="">Xóa</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>CNTT</td>
-                            <td>PTW</td>
-                            <td>Phân Tích Web</td>
-                            <td>3</td>
-                            <td>0.4</td>
-                            <td><a href="">Xóa</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>CNTT</td>
-                            <td>A</td>
-                            <td>Công Nghệ A</td>
-                            <td>3</td>
-                            <td>0.4</td>
-                            <td><a href="">Xóa</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>CNTT</td>
-                            <td>B</td>
-                            <td>Công Nghệ B</td>
-                            <td>3</td>
-                            <td>0.4</td>
-                            <td><a href="">Xóa</a></td>
-                        </tr>
-                        <tr>
-                            <td><input type="checkbox" name="" id=""></td>
-                            <td>CNTT</td>
-                            <td>C</td>
-                            <td>Công Nghệ C</td>
-                            <td>3</td>
-                            <td>0.4</td>
-                            <td><a href="">Xóa</a></td>
-                        </tr>
+                        </tr> -->
+                      
                     </table>
                     
                     </div>
                 </div> 
-                </form>
+                
             
         </div>
     </main>

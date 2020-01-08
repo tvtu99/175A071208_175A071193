@@ -25,6 +25,4 @@ else
 }
 //dong kn
 mysqli_close($dbcon);
-
-
 ?>

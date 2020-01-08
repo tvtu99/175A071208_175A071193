@@ -11,7 +11,7 @@ else
     $sql = "SELECT * FROM `nganh` WHERE man = '$man'";
     $sl = mysqli_query($dbcon,$sql);
     $query = "UPDATE `nganh` SET `TenN`='$tenn' WHERE Man = '$man'";
-    $kq = mysqli_query($dbcon,$query); //truyen sql vao mysql
+    mysqli_query($dbcon,$query); //truyen sql vao mysql
     if(mysqli_num_rows($sl) > 0)
     {
         echo "Cập Nhập Mã Ngành : ".$man." <br>Tên Ngành : ".$tenn." Thành Công";

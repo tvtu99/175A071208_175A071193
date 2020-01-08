@@ -5,7 +5,7 @@ $output = '<tr class="row-first">
 <td width="300">Tên Ngành</td>
 <td></td>
 </tr>';
-if(isset($_POST["makhoa"]))  
+if(isset($_POST["makhoa"]))
 {  
     if($_POST["makhoa"] != '')  
     {  
@@ -13,7 +13,7 @@ if(isset($_POST["makhoa"]))
     }  
     else  
     {  
-        $sql = "SELECT * FROM nganh";  
+        $sql = "SELECT * FROM nganh";
     }  
     $kq = mysqli_query($dbcon, $sql);  
     while($row = mysqli_fetch_array($kq))  

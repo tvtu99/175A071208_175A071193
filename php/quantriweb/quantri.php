@@ -1,7 +1,7 @@
 <?php
-//require_once("../includes/ss-qtw.php");
+require_once("../includes/ss-qtw.php"); // ss_phan quyen den trang
 include("../includes/head.php");
-include("./xuly/import-nganh.php");
+include("./xuly/import-nganh.php"); //import nganh bang file
 include("../includes/conn.php");
 function khoa($dbcon){
     include("../includes/conn.php");
@@ -140,6 +140,8 @@ function allnganh($dbcon)
                 </div>
                 <div id="div-update-nganh"></div>
                 </form>
+
+                <!-- Sự kiện click button -->
                 <script>
                 $(document).ready(function () {
                     $('#bt-update-nganh').click(function (e) { 
