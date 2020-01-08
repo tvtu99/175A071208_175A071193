@@ -19,7 +19,6 @@
                     <li><a href="qlgiangvien.php" ><span>QL Giảng Viên</span></a></li>
                   </ul>	   
                 </div>
-                
             </div>
             <!-- main-right -->
             <div class="main-r col-md-9">

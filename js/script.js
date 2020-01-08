@@ -13,6 +13,7 @@ $(document).ready(function () {
     });
     
 });
+// chọn Khoa -> hiển thị ra bảng chọn ngành
 $(document).ready(function(){  
     $('#show-khoa').change(function(){  
         var id = $(this).val();  
@@ -25,7 +26,8 @@ $(document).ready(function(){
             }  
         });  
     });  
-}); 
+});
+//select theo nganh -> môn học 
 $(document).ready(function(){  
     $('#shownganh').change(function(){  
         var id = $(this).val();  
@@ -38,22 +40,33 @@ $(document).ready(function(){
             }  
         });  
     });  
+});
+//show giai đoạn Theo năm học
+$(document).ready(function(){  
+    $('#namhoc_gd').change(function(){  
+        var id = $(this).val();  
+        $.ajax({  
+            url:"./xuly/load_giaidoan.php",  
+            method:"POST",  
+            data:{namhoc:id},  
+            success:function(data){  
+                    $('#tb_show_giaidoan').html(data);  
+            }  
+        });  
+    });  
+});
+//click nút button update giai đoạn
+$(document).ready(function () {
+    $('#bt_up_gd').click(function (e) { 
+        e.preventDefault();
+        var data = $('#frm_update_gd').serialize();
+        $.ajax({
+            type: "POST",
+            url: "./xuly/update_giaidoan.php",
+            data: data,
+            success: function (data) {
+                $('#div_up_giaidoan').html(data);
+            }
+        });
+    });
 }); 
-// $(document).ready(function () {
-//     //click button import nganh hoc
-//     $("#bt-import_file_nganhhoc").click(function () { 
-//         var data = $("#frm-import-nganh").serialize();
-//         $.ajax({
-//             type: "POST",
-//             url: "./xuly/import-nganh.php",
-//             data: data,
-//             // dataType : 'json',
-//             // contentType : false,
-//             // cache : false,
-//             // processata : false,
-//             success: function (data) {
-//                 $('#mess-nganh').html(data);
-//             }
-//         });
-//     });
-// });
