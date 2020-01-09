@@ -28,7 +28,7 @@ include("../includes/conn.php");
                 <li><a href="qlmonhoc.php"  class="active"><span>QL Môn Học</span></a></li>
                 <li><a href="qlgiaidoan.php" ><span>QL Giai Đoạn Học</span></a></li>
                 <li><a href="qllophocphan.php"><span>QL Lớp Học Phần</span></a></li>
-                <li><a href="qlgiangvien.php" ><span>QL Giảng Viên</span></a></li>
+                <!-- <li><a href="qlgiangvien.php" ><span>QL Giảng Viên</span></a></li> -->
                 </ul>	   
             </div>
             

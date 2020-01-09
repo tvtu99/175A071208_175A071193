@@ -70,3 +70,33 @@ $(document).ready(function () {
         });
     });
 }); 
+//click button show lop học phần
+$(document).ready(function () {
+    $("#bt_show_lophp").click(function (e) { 
+        e.preventDefault();
+        var data= $('#frm_show_lophp').serialize();
+        $.ajax({
+            type: "POST",
+            url: "./xuly/load_lophp.php",
+            data: data,
+            success: function (data) {
+                $('#tb_show_lophp').html(data);
+            }
+        });
+    });
+});
+//click nút button update LHP
+$(document).ready(function () {
+    $('#bt_up_lhp').click(function (e) { 
+        e.preventDefault();
+        var data = $('#frm_update_lhp').serialize();
+        $.ajax({
+            type: "POST",
+            url: "./xuly/update_lhp.php",
+            data: data,
+            success: function (data) {
+                $('#div_up_lhp').html(data);
+            }
+        });
+    });
+}); 

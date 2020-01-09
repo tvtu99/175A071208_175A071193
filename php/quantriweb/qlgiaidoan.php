@@ -17,7 +17,7 @@ include("./xuly/import_giaidoan.php"); //import giai doan hoc bang file
                     <li><a href="qlmonhoc.php" ><span>QL Môn Học</span></a></li>
                     <li><a href="qlgiaidoan.php"  class="active"><span>QL Giai Đoạn Học</span></a></li>
                     <li><a href="qllophocphan.php"><span>QL Lớp Học Phần</span></a></li>
-                    <li><a href="qlgiangvien.php" ><span>QL Giảng Viên</span></a></li>
+                    <!-- <li><a href="qlgiangvien.php" ><span>QL Giảng Viên</span></a></li> -->
                   </ul>	   
                 </div>
                 
