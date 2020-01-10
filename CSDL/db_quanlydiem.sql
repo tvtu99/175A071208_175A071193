@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 30, 2019 lúc 04:15 PM
+-- Thời gian đã tạo: Th1 10, 2020 lúc 07:25 AM
 -- Phiên bản máy phục vụ: 10.1.38-MariaDB
 -- Phiên bản PHP: 7.3.3
 
@@ -47,7 +47,10 @@ CREATE TABLE `diem` (
 --
 
 INSERT INTO `diem` (`MaSV`, `MaMH`, `diem1`, `hs1`, `diem2`, `hs2`, `diem3`, `hs3`, `DQT`, `DT`, `diemtongket`) VALUES
-('175A0', '1', 7, 0.3, 7, 0.3, 9, 0.4, 7.8, 10, 9.12);
+('175A0', '1', 7, 0.3, 7, 0.3, 9, 0.4, 7.8, 7, 7.32),
+('175A0', '2', 8, 0.3, 7, 0.3, 9, 0.4, 8.1, 8, 8.04),
+('175A0', '3', 5, 0.3, 7, 0.3, 9, 0.4, 7.2, 5, 5.88),
+('175A0', '4', 7, 0.3, 7, 0.3, 8, 0.4, 7.4, 7, 7.16);
 
 --
 -- Bẫy `diem`
@@ -69,7 +72,6 @@ DELIMITER ;
 --
 
 CREATE TABLE `dsl` (
-  `ID` int(11) NOT NULL,
   `MaLHP` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `MaSV` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_vietnamese_ci;
@@ -78,19 +80,11 @@ CREATE TABLE `dsl` (
 -- Đang đổ dữ liệu cho bảng `dsl`
 --
 
-INSERT INTO `dsl` (`ID`, `MaLHP`, `MaSV`) VALUES
-(1, '1', '175A0'),
-(2, '1', '175A1'),
-(3, '1', '175A3'),
-(4, '1', '175A4'),
-(5, '2', '175A0'),
-(6, '2', '175A1'),
-(7, '2', '175A3'),
-(8, '2', '175A4'),
-(9, '3', '175A0'),
-(10, '3', '175A1'),
-(11, '3', '175A3'),
-(12, '3', '175A4');
+INSERT INTO `dsl` (`MaLHP`, `MaSV`) VALUES
+('1', '175A0'),
+('5', '175A0'),
+('6', '175A0'),
+('7', '175A0');
 
 -- --------------------------------------------------------
 
@@ -195,7 +189,7 @@ INSERT INTO `lop` (`MaL`, `TenL`) VALUES
 
 CREATE TABLE `lophp` (
   `MaLHP` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
-  `TenLHP` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
+  `TenLHP` varchar(30) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `MaMH` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `MaGV` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL,
   `MaGD` varchar(8) COLLATE utf8mb4_vietnamese_ci NOT NULL
@@ -206,9 +200,14 @@ CREATE TABLE `lophp` (
 --
 
 INSERT INTO `lophp` (`MaLHP`, `TenLHP`, `MaMH`, `MaGV`, `MaGD`) VALUES
-('1', 'Công Ngh', '1', 'GV1', 'GD12019'),
-('2', 'Công Ngh', '1', 'GV2', 'GD12019'),
-('3', 'Công Ngh', '1', 'GV3', 'GD12019');
+('1', 'Môn Học 1 1', '1', 'GV1', 'GD12019'),
+('2', 'Môn Học 1 2', '1', 'GV2', 'GD12020'),
+('3', 'Môn Học 1 3', '1', 'GV3', 'GD12019'),
+('4', 'Môn Học 1 4', '1', 'GV4', 'GD12020'),
+('5', 'Môn Học 1 1', '2', 'GV1', 'GD12019'),
+('6', 'Môn Học 1 2', '3', 'GV2', 'GD12020'),
+('7', 'Môn Học 1 3', '4', 'GV3', 'GD12019'),
+('8', 'Môn Học 1 4', '2', 'GV3', 'GD12020');
 
 -- --------------------------------------------------------
 
@@ -229,10 +228,11 @@ CREATE TABLE `monh` (
 --
 
 INSERT INTO `monh` (`MaMH`, `TenMH`, `MaN`, `STC`, `HS`) VALUES
-('1', 'công nghệ web', 'CNTT', 3, 0.4),
-('2', 'Phân Tích thiết kế HTTT', 'CNTT', 3, 0.4),
-('3', 'CGW', 'CNTT', 3, 0.5),
-('4', 'Phân Tích Hệ Thống', 'CNTT', 3, 0.4);
+('1', 'Môn Học 1', 'CNTT', 3, 0.4),
+('2', 'Môn Học 2', 'CNTT', 3, 0.4),
+('3', 'Môn Học 3', 'CNTT', 3, 0.4),
+('4', 'Môn Học 4', 'KT1', 3, 0.4),
+('5', 'Môn Học 5', 'KT1', 3, 0.4);
 
 -- --------------------------------------------------------
 
@@ -251,9 +251,12 @@ CREATE TABLE `nganh` (
 --
 
 INSERT INTO `nganh` (`MaN`, `TenN`, `MaKhoa`) VALUES
-('CNTT', 'Công nghệ Thông tin', 'CNTT'),
+('CNTT', 'Công Nghệ Thông Tin', 'CNTT'),
 ('HTPM', 'Hệ Thống Phần Mềm', 'CNTT'),
-('HTTT', 'Hệ Thống Thông Tin', 'CNTT');
+('HTTT', 'Hệ Thống Thông Tin', 'CNTT'),
+('KT1', 'Kinh Tế 1', 'KT'),
+('KT2', 'Kinh Tế 2', 'KT'),
+('KT3', 'Kinh Tế 3', 'KT');
 
 -- --------------------------------------------------------
 
@@ -276,25 +279,25 @@ CREATE TABLE `sv` (
 
 INSERT INTO `sv` (`MaSV`, `MaL`, `HoTen`, `NamSinh`, `CMT`, `Que`) VALUES
 ('175A0', '59TH1', 'Trịnh Văn Tú', 1999, 1099017269, 'Hà Nội'),
-('175A1', '59TH1', 'Nguyễn Anh Tuấn', 1999, 1099017269, 'Hà Nội'),
-('175A10', '59TH3', 'Trịnh A A', 1999, 1099017269, 'Hà Nội'),
-('175A11', '59TH3', 'Nguyễn Tái Tú', 1999, 1099017269, 'Hà Nội'),
-('175A12', '59TH4', 'Trịnh Tàu T', 1999, 1099017269, 'Hà Nội'),
-('175A13', '59TH4', 'Nguyễn Thế Tú', 1999, 1099017269, 'Hà Nội'),
-('175A14', '59TH4', 'Trịnh Văn C', 1999, 1099017269, 'Hà Nội'),
-('175A15', '59TH4', 'Trịnh Văn B', 1999, 1099017269, 'Hà Nội'),
-('175A16', '59PM1', 'Nguyễn Văn A', 1999, 1099017269, 'Hà Nội'),
-('175A17', '59PM1', 'Trịnh Văn AI', 1999, 1099017269, 'Hà Nội'),
-('175A18', '59PM1', 'Nguyễn Văn Thế', 1999, 1099017269, 'Hà Nội'),
-('175A19', '59PM1', 'Nguyễn Văn Đao', 1999, 1099017269, 'Hà Nội'),
-('175A2', '59TH1', 'Nguyễn Thế Tú', 1999, 1099017269, 'Hà Nội'),
-('175A3', '59TH1', 'Nguyễn Anh Tú', 1999, 1099017269, 'Hà Nội'),
-('175A4', '59TH2', 'Trịnh Văn Tuấn', 1999, 1099017269, 'Hà Nội'),
-('175A5', '59TH2', 'Tào Văn Tuấn', 1999, 1099017269, 'Hà Nội'),
-('175A6', '59TH2', 'Nguyễn Văn G', 1999, 1099017269, 'Hà Nội'),
-('175A7', '59TH2', 'Trịnh Tú', 1999, 1099017269, 'Hà Nội'),
-('175A8', '59TH3', 'Trịnh Văn Tú', 1999, 1099017269, 'Hà Nội'),
-('175A9', '59TH3', 'NGuyễn Văn A', 1999, 1099017269, 'Hà Nội');
+('175A1', '59TH1', 'Nguyễn Anh Tuấn', 1999, NULL, 'Hà Nội'),
+('175A10', '59TH3', 'Trịnh A A', 1999, NULL, 'Hà Nội'),
+('175A11', '59TH3', 'Nguyễn Tái Tú', 1999, NULL, 'Hà Nội'),
+('175A12', '59TH4', 'Trịnh Tàu T', 1999, NULL, 'Hà Nội'),
+('175A13', '59TH4', 'Nguyễn Thế Tú', 1999, NULL, 'Hà Nội'),
+('175A14', '59TH4', 'Trịnh Văn C', 1999, NULL, 'Hà Nội'),
+('175A15', '59TH4', 'Trịnh Văn B', 1999, NULL, 'Hà Nội'),
+('175A16', '59PM1', 'Nguyễn Văn A', 1999, NULL, 'Hà Nội'),
+('175A17', '59PM1', 'Trịnh Văn AI', 1999, NULL, 'Hà Nội'),
+('175A18', '59PM1', 'Nguyễn Văn Thế', 1999, NULL, 'Hà Nội'),
+('175A19', '59PM1', 'Nguyễn Văn Đao', 1999, NULL, 'Hà Nội'),
+('175A2', '59TH1', 'Nguyễn Thế Tú', 1999, NULL, 'Hà Nội'),
+('175A3', '59TH1', 'Nguyễn Anh Tú', 1999, NULL, 'Hà Nội'),
+('175A4', '59TH2', 'Trịnh Văn Tuấn', 1999, NULL, 'Hà Nội'),
+('175A5', '59TH2', 'Tào Văn Tuấn', 1999, NULL, 'Hà Nội'),
+('175A6', '59TH2', 'Nguyễn Văn G', 1999, NULL, 'Hà Nội'),
+('175A7', '59TH2', 'Trịnh Tú', 1999, NULL, 'Hà Nội'),
+('175A8', '59TH3', 'Trịnh Văn Tú', 1999, NULL, 'Hà Nội'),
+('175A9', '59TH3', 'NGuyễn Văn A', 1999, NULL, 'Hà Nội');
 
 -- --------------------------------------------------------
 
@@ -317,11 +320,11 @@ CREATE TABLE `taikhoan` (
 --
 
 INSERT INTO `taikhoan` (`hoten`, `username`, `password`, `level`, `email`, `verified`, `verification_code`) VALUES
-('Admin  01', 'admin', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 4, NULL, '1', NULL),
+('Admin 01', 'admin', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 4, NULL, '1', NULL),
 ('Ánh Tuyết', 'anhtuyet', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 4, 'tvtu165@gmail.com', '1', 'bb735a83a0b95f549334768de7486508'),
 ('Giáo Viên', 'giangvien', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 2, NULL, '1', NULL),
 ('Quản Lý', 'quanli', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 3, NULL, '1', NULL),
-('Sinh viên', 'sinhvien', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 1, NULL, '1', NULL),
+('175A0', 'sinhvien', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 1, NULL, '1', NULL),
 ('ac', 'test2', '$2y$10$TvcuTtc3nHZrtkfay6zLD.GasEJsNnMvWt7ow2YUQ.XZgrq7Haw5a', 4, 'trinhtu16051999@gmail.com', '1', '44bb4dc1fe1d268c99252758a9c725c8');
 
 -- --------------------------------------------------------
@@ -358,7 +361,7 @@ ALTER TABLE `diem`
 -- Chỉ mục cho bảng `dsl`
 --
 ALTER TABLE `dsl`
-  ADD PRIMARY KEY (`ID`),
+  ADD PRIMARY KEY (`MaLHP`,`MaSV`),
   ADD KEY `MaLHP` (`MaLHP`,`MaSV`),
   ADD KEY `MaSV` (`MaSV`);
 
@@ -415,6 +418,8 @@ ALTER TABLE `nganh`
 --
 ALTER TABLE `sv`
   ADD PRIMARY KEY (`MaSV`),
+  ADD UNIQUE KEY `CMT` (`CMT`),
+  ADD UNIQUE KEY `CMT_2` (`CMT`),
   ADD KEY `MaL` (`MaL`);
 
 --
@@ -428,16 +433,6 @@ ALTER TABLE `taikhoan`
 --
 ALTER TABLE `truong`
   ADD PRIMARY KEY (`MaTruong`);
-
---
--- AUTO_INCREMENT cho các bảng đã đổ
---
-
---
--- AUTO_INCREMENT cho bảng `dsl`
---
-ALTER TABLE `dsl`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

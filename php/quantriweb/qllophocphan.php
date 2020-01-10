@@ -105,7 +105,7 @@ function show_lhp($dbcon){
                             <button type="submit" class="btn btn-primary">Thêm</button>
                         </div>
                     </div> -->
-                    <div class="col-md-12">Thêm Bằng File</div>
+                    <div class="col-md-12">Thêm Bằng File .csv (VD : 1,Môn Học 1 1,1,GV1,GD12019)</div>
                     <div class="col-md-2"><input type="file" name="file" id="file" accept=".csv"></div>
                     <div class="btn col-md-12"><button name ="import" class = "btn btn-primary">Import</button></div>
                 </div>

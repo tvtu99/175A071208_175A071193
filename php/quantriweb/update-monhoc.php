@@ -1,10 +1,19 @@
 <?php
 //xóa ngành theo mã ngành truyền vào
-$mamh = $_GET['MaMH'];
-$tenmh = $_GET['TenMH'];
-$man = $_GET['MaN'];
-$stc = $_GET['STC'];
-$hs = $_GET['HS'];
+if(isset($_GET['MaMH'])){
+    $mamh = $_GET['MaMH'];
+    $tenmh = $_GET['TenMH'];
+    $man = $_GET['MaN'];
+    $stc = $_GET['STC'];
+    $hs = $_GET['HS'];
+}
+else {
+    $mamh ='';
+$tenmh ='';
+$man ='';
+$stc = '';
+$hs ='';
+}
 
 ?>
 <?php
@@ -40,9 +49,9 @@ include("../includes/conn.php");
                 <?php
                 echo '<form action="./xuly/update-mh.php" method="post">
                 <div class="row row-qlmh">  
-                <div class="col-md-12">
+                <div class="col-md-12 " style="display : none">
                     <div class="label">Mã Môn Học : Không Sửa </div>
-                    <div class="value"><input type="text" name="mamh" value ="'.$mamh.'"size="20" maxlength="8" required></div>
+                    <div class="value" ><input type="text" name="mamh" value ="'.$mamh.'"size="20" maxlength="8" required></div>
                 </div>
                 <div class="col-md-12">
                     <div class="label">Tên Môn Học</div>
