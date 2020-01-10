@@ -52,7 +52,7 @@ if($_POST){
                 {
                     $verificationCode = md5(uniqid("TRINHTU165", true));// Tạo mã xác minh
                     // send the email verification
-                    $verificationLink = "http://localhost:9999/project/login_logout_sub.php/activate.php?code=" . $verificationCode;// noi dung mail
+                    $verificationLink = "http://localhost:9999/project/login_logout_sub/activate.php?code=" . $verificationCode;// noi dung mail
                     $to = "$email";
                     $subject = "Send Email from Localhost";
                     $txt = "Vui Lòng Click vào link để xác nhận :" .$verificationLink;
@@ -68,7 +68,8 @@ if($_POST){
                                     verified = '0',
                                     username =?,
                                     password = ?,
-                                    level = '1'";
+                                    level = '1',
+                                    hoten = ?";
     
                         $stmt = $con->prepare($query);
     
@@ -76,6 +77,7 @@ if($_POST){
                         $stmt->bindParam(2, $verificationCode);
                         $stmt->bindParam(3, $user);
                         $stmt->bindParam(4, $passh); //insert password = password_hasd()
+                        $stmt->bindParam(5, $user);
     
                         // Execute the query
                         if($stmt->execute()){
